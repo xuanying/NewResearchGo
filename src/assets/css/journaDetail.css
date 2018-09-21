@@ -1,0 +1,149 @@
+#hot_canvasDiv{
+    overflow: hidden;
+}
+/*head*/
+.journal_base_info{
+    padding: 30px 60px;
+}
+.journal_header .journal_title{
+    width: 100%;
+    height: 3.2em;
+}
+.journal_header h2{
+    font-size: 1.5em;
+    color: #202020;
+    line-height: 40px;
+}
+.journal_level .rankA,.journal_level .rankB,.journal_level .rankC,.journal_level .rankC{
+    padding-left: 50px;
+    background-size: 25px;
+    width: 60px;
+    height: 25px;
+}
+/*期刊基本信息*/
+.journal_base_info section{
+	margin: 10px 0;
+    line-height: 30px;
+}
+.journal_ISSN h2,.journal_factor h2,.journal_level h2{
+    font-size: 1.0em;
+    min-width: 80px;
+    text-align: left;
+    font-weight: bold;
+    color: #303030;
+    vertical-align: top;
+}
+.journal_ISSN h2,.journal_factor h2,.journal_level h2{
+    display: inline-block;
+}
+.journal_ISSN div.detail_message,.journal_factor div.detail_message,.journal_level div.detail_message{
+    display: inline-block;
+    color: #278aa0;
+}
+.journal_ISSN div,.journal_factor div,.journal_level div{
+   padding-bottom: 5px;
+}
+/*文章近五年趋势*/
+.line_chart{
+    width: 880px;
+	margin: 10px 60px;
+	margin-bottom: 20px;
+}
+.line_chart h2, .line_chart div.line_chart{
+    display: inline-block;
+}
+.line_chart h2{
+    font-size: 1em;
+    background-color: #278aa0;
+    width: 100px;
+    color: #ffffff;
+    font-weight: normal;
+    text-align: center;
+    border-radius: 3px;
+    float: left;
+}
+.line_chart div.detail_message{
+    width: 85%;
+    padding-left: 30px;
+    font-size: 0.9em;
+}
+
+/*热门关键词及潜力关键词导航*/
+.journal_keyword{
+    width: 880px;
+    margin: 10px 60px;
+}
+.main_content_head{
+    padding-bottom: 5px;
+    border-bottom: 2px solid #278aa0;
+}
+.main_content_head .title{
+    font-size: 1em;
+    color: #000;
+    display: inline-block;
+    background-color: #c7cda5;
+    border-radius: 10px 10px 0 0;
+    padding: 5px 10px;
+    position: relative;
+    top: 5px;
+    cursor: default;
+}
+.main_content_head .active{
+    font-size: 1.2em;
+    background-color: #278aa0;
+    border-radius: 10px 10px 0 0;
+    padding: 5px 10px;
+    color: #fff;
+    border: 2px solid #ffffff;
+    border-bottom: 0;
+    z-index: 1;
+}
+#hot_keywords,#potential_keywords{
+    width: 880px;
+    height: 350px;
+}
+#hot_keywords .span_list,#potential_keywords .span_list{
+    line-height: 40px;
+}
+/*------文章数排名前十作者------*/
+.jour_auth{
+    width: 880px;
+    margin: 10px 60px;
+    padding-bottom: 20px;
+}
+.jour_auth ul{
+    padding-top: 20px;
+}
+.jour_auth li{
+    width: 50%;
+    float: left;
+    height: 50px;
+}
+.jour_auth li a{
+    color: #202020;
+}
+.jour_auth li a:hover{
+    text-decoration: underline;
+}
+.jour_auth li span{
+    display: inline-block;
+}
+.jour_auth li .word_list{
+    display: inline-block;
+    font-size: 1.0em;
+    vertical-align: top;
+    width: 300px;
+    cursor: pointer;
+}
+.jour_auth li .num,.potential_keywords li .num{
+    height: 30px;
+    line-height: 30px;
+    font-size: 1em;
+    background: #f2b431;
+    color: white;
+    width: 30px;
+    text-align: center;
+    margin-right: 10px;
+    border-radius: 15px;
+
+}

@@ -1,0 +1,91 @@
+#hot_canvasDiv{
+    overflow: hidden;
+}
+.organization_messages{
+    padding: 30px 60px;
+}
+/*logo and org name*/
+.org_logo_name{
+    overflow: auto;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+.org_logo_name img{
+    height: 80px;
+    width: auto;
+    vertical-align: middle;
+    padding-right: 10px;
+}
+.org_logo_name h1{
+    font-weight: normal;
+    color: #202020;
+    font-size: 1.5em;
+    display: inline-block;
+}
+.collection{
+    float: right;
+    margin-right: 10px;
+    margin-top: 25px;
+}
+/*messages part*/
+.org_part_message{
+    margin: 15px 0;
+    line-height: 30px;
+    overflow: auto;
+}
+.org_part_message h3{
+    text-transform: lowercase;/*-----------------------------------------------------------测试待删*/
+}
+.org_part_message h2{
+    display: inline-block;
+    width: 100px;
+    color: #303030;
+    font-size: 1.0em;
+    text-align: left;
+    font-weight: bold;
+    vertical-align: top;
+}
+.org_part_message .detail_message{
+    display: inline-block;
+    max-width: 80%;
+    font-size: 1.0em;
+    color: #278aa0;
+}
+.org_part_message li{
+    display: inline-block;
+}
+.org_part_message li a{
+    text-decoration: none;
+    color: #474747;
+}
+.org_part_message li a:hover{
+    text-decoration: underline;
+}
+/*研究领域*/
+#org_domain li{
+    text-transform: lowercase;/*-----------------------------------------------------------测试待删*/
+    margin-right: 5px;
+    margin-bottom: 8px;
+    padding: 0 5px;
+    border-radius: 3px;
+    color: #474747;
+    border: 1px dashed #959595;
+}
+#org_domain li:hover{
+    cursor: pointer;
+    background-color: #959595;
+    color: #ffffff;
+}
+#org_domain li.active{
+    background-color: #959595;
+    color: #fff;
+}
+#masters li,#hot_words li{
+    margin-right: 20px;
+}
+
+#r_world{
+    padding-right: 40px;
+    border-right: 1px solid #e2e2e2;
+    margin-right: 40px;
+}

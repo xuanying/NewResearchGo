@@ -1,0 +1,93 @@
+/*VarifyEmailAddress.css*/
+*{margin:0;padding:0;}
+body{background:url(../img/first_bg.jpg) 0 0 repeat-y; }
+.first_head {
+    width: 1000px;
+	margin: 50px auto 0;
+}
+.head_content {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #ef2200;
+}
+.head_content h1 {
+    font-size: 1.5em;
+    font-weight: normal;
+}
+.head_content h2 {
+    font-size: 0.9em;
+    font-weight: normal;
+    margin: 30px 20px;
+    color: #a3a3a3;
+}
+.content {
+	width:1000px;
+	margin:30px auto;
+	}
+.form_content {
+	width:80%;
+	margin:0 auto;
+
+}
+
+.form_content p{ line-height:30px;}
+.form_content .hint {
+    font-size: 0.9em;
+    color: #dc1f00;
+	margin:0 0 0 200px;
+}
+
+
+.form_group {
+	margin:20px auto 20px 180px;
+	width:50%;
+}
+.form_group label{
+	font-size:1.2em;
+	width:auto;
+	display:inline-block;
+	position:relative;
+}
+.form_group input[type="checkbox"], img.checkSign{
+	float:right;
+	margin-right:-20px;
+	position:relative;
+	top:9px;
+}
+.form_group .btn_submit{
+    margin-left: 120px;
+    background-color: #dc1f00;
+    color: #ffffff;
+    border: 0;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+	width:150px;
+	vertical-align:middle;
+}
+.form_group span{
+	font-size:1.2em;
+	margin-left:20px;
+}
+span.necessary {
+	margin-left:10px;
+}
+.necessary:before{
+    content: "*";
+    color: #dc1f00;
+	float:left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

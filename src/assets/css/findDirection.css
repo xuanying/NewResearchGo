@@ -1,0 +1,164 @@
+/*-----------------主体部分-----------------*/
+.main{
+    width: 100%;
+}
+.main_content{
+    width: 1000px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding-bottom: 20px;
+}
+/*head*/
+.hot_box{
+    border-bottom: 2px solid #c7cda5;
+}
+.potential_box,.hot_box{
+	margin: 0 auto;
+	padding: 30px 10px;
+	padding-bottom: 20px;
+	width: 820px;
+}
+.dir_head{
+	width: 820px;
+	text-align: center;
+}
+.dir_head h1{
+    font-size: 1.7em;
+    color: #343434;
+    display: inline-block;
+}
+/* 换一批 */
+#change_word,#change_word2{
+	position: relative;
+	top: 10px;
+	z-index: 0;
+}
+#change_word,#change_word2{
+    float: right;
+    width: 55px;
+    padding-left: 25px;
+    background: url("../images/change_word.png") no-repeat left center;
+    font-size: 1.1em;
+    display: inline-block;
+    line-height: 30px;
+    vertical-align: middle;
+    color: #8a8a8a;
+    font-weight: normal;
+    cursor: pointer;
+}
+#change_word:hover,#change_word2:hover{
+    background: url("../images/change_red.png") no-repeat left center;
+    color: #ebb15e;
+}
+/*主内容显示*/
+.hot_wrap{
+	margin-top: 20px;
+	width: 820px;
+	overflow: hidden;
+	position: relative;
+	height: 320px;
+}
+.hot_wrap ul{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 820px;
+}
+li.dir_list{
+	display: inline-block;
+	width: 820px;
+	vertical-align: top;
+}
+.dir_list h2 a{
+    font-size: 1.2em;
+    color: #279aa0;
+    text-decoration: none;
+	left: 5px;
+}
+.dir_list h2 a:hover{
+	text-decoration: underline;
+}
+.dir_list table{
+	display: block;
+	text-align: center;
+	margin-top: 20px;
+}
+.dir_list tbody,.dir_list tr{
+	display: block;
+	width: 100%;
+	vertical-align: top;
+}
+.dir_list tr{
+	padding-left: 10px;
+}
+.dir_list td{
+	background-color: #f2f2f2;
+	border-radius: 10px;
+	width: 22%;
+	text-align: left;
+	padding: 10px 10px;
+}
+.dir_list td:last-child{
+	margin-right: 0;
+}
+.dir_list td h3{
+	font-size: 1em;
+	text-align: center;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+.dir_list span{
+	margin-left: 10px;
+}
+.dir_list td p{
+	line-height: 30px;
+}
+.dir_list .tendency{
+	margin-left: 10px;
+	padding-left: 18px;
+	background: url("../images/tendency.png") no-repeat left top;
+	background-size: 20px;
+	color: #515151;
+}
+.dir_list .p_num{
+	color: #2caeb6;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+.dir_relate{
+	margin: 20px 30px 0 40px;
+	border: 2px dashed #ebb15e;
+	border-radius: 5px;
+	padding: 20px;
+	padding-right: 5px;
+	position: relative;
+}
+.dir_relate img{
+	width: 100px;
+	height: auto;
+	background-color: #fff;
+	position: absolute;
+	top: -18px;
+    left: -22px;
+}
+.dir_relate p{
+	color: #222222;
+	line-height: 30px;
+    margin-left: 15px;
+}
+.dir_relate .p_a{
+	color: rgb(0, 0, 238);
+	cursor: pointer;
+}
+.dir_relate span.p_num{
+    padding: 2px 5px 2px 25px;
+    border-radius: 4px;
+    color: #ee9967;
+    font-size: 1em;
+    line-height: 35px;
+    background: url('../images/paper.png') no-repeat left center;
+    background-size: 20px;
+    background-position: 5px 4px;
+    background-color: #fddfdf;
+    margin-right: 5px;
+}

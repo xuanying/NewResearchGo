@@ -1,0 +1,135 @@
+/*head*/
+.list_head{
+    margin: 30px 50px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #c7cda5;
+}
+.list_head span{
+    font-size: 1.1em;
+    color: #474747;
+}
+.list_head #list_filter{
+    margin-left: 5px;
+}
+.list_head input{
+    height: 30px;
+    outline:none;
+}
+.list_head .filter_div{
+    border-radius: 5px;
+    display: inline-flex;
+    border: 1px solid #c3c3c3;
+    box-shadow: 0 0 2px 0 #969696;
+    padding-left: 5px;
+    background-color: #ffffff;
+}
+.list_head input[type="text"]{
+    width: 300px;
+    border: 0;
+}
+.list_head input[type="button"]{
+    color: #6d6d6d;
+    border: 0;
+    background: url('../img/filter.png') no-repeat center;
+    background-size: 25px;
+    border-radius: 0 5px 5px 0;
+    width: 40px;
+    cursor: pointer;
+}
+/* 换一批 */
+#change_word,#change_word2{
+	position: relative;
+	top: 10px;
+	z-index: 0;
+}
+#change_word,#change_word2{
+    float: right;
+    width: 55px;
+    padding-left: 25px;
+    background: url("../images/change_word.png") no-repeat left center;
+    font-size: 1.1em;
+    display: inline-block;
+    line-height: 30px;
+    vertical-align: middle;
+    color: #8a8a8a;
+    font-weight: normal;
+    cursor: pointer;
+}
+#change_word:hover,#change_word2:hover{
+    background: url("../images/change_red.png") no-repeat left center;
+    color: #ebb15e;
+}
+/*期刊列表*/
+.jour_content{
+    padding: 0 50px;
+}
+.jour_part{
+    padding-left: 20px;
+    margin-top: 25px;
+    padding-bottom: 30px;
+    min-height: 300px;
+}
+.jour_part:nth-child(odd){
+    border-bottom: 1px dashed #a2a2a2;
+}
+.part_left{
+    width: 50%;
+    display: inline-block;
+}
+.part_left h1 a{
+    font-size: 1.3em;
+    display: block;
+    margin-bottom: 10px;
+    color: #22868c;
+    text-decoration: none;
+}
+.part_left h1 a:hover{
+    color: #2caeb5;
+    text-decoration: underline;
+}
+.part_left p{
+    color: #2c2c2c;
+    font-size: 1em;
+    line-height: 40px;
+}
+.part_left span{
+    margin-right: 3px;
+    margin-left: 3px;
+    font-size: 1em;
+}
+.part_left a{
+    margin-right: 5px;
+    font-size: 1em;
+    color: #474747;
+}
+.part_left a:hover{
+    text-decoration: underline;
+}
+.part_left .keyword_info,.part_left .friend_info{
+    vertical-align: top;
+}
+/*keyword*/
+.my_keywords{
+    float: right;
+    width: 350px;
+    height: 300px;
+    margin-right: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.my_keywords .span_list{
+    cursor: pointer;
+    line-height: 40px;
+}
+.my_keywords:hover{
+    background: url("../img/keywords.png") no-repeat top left;
+    background-size: 100px;
+    border-radius: 10px;
+    margin-top: 15px;
+    -webkit-box-shadow:0 0 10px rgba(127, 127, 127, .8);  
+    -moz-box-shadow:0 0 10px rgba(127, 127, 127, .8);  
+    box-shadow:0 0 10px rgba(127, 127, 127, .8);
+}
+.rankA,.rankB,.rankC,.rankD{
+    background-size: 35px;
+}

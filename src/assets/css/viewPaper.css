@@ -1,0 +1,63 @@
+/*head*/
+.list_head{
+	margin: 30px 50px;
+    margin-bottom: 0;
+	padding-bottom: 15px;
+    border-bottom: 2px solid #c7cda5;
+}
+.list_head span{
+	font-size: 1.1em;
+	color: #474747;
+}
+/*filter*/
+.list_head #list_filter{
+	margin-left: 5px;
+}
+.list_head input{
+    height: 30px;
+    outline:none;
+}
+.list_head .filter_div{
+	border-radius: 5px;
+    display: inline-flex;
+    border: 1px solid #c3c3c3;
+    box-shadow: 0 0 2px 0 #969696;
+    padding-left: 5px;
+    background-color: #ffffff;
+}
+.list_head input[type="text"]{
+    width: 300px;
+    border: 0;
+}
+.list_head input[type="button"]{
+    color: #6d6d6d;
+    border: 0;
+    background: url('../images/filter.png') no-repeat center;
+    background-size: 25px;
+    border-radius: 0 5px 5px 0;
+    width: 40px;
+    cursor: pointer;
+}
+/* 换一批 */
+#change_word,#change_word2{
+	position: relative;
+	top: 10px;
+	z-index: 0;
+}
+#change_word,#change_word2{
+    float: right;
+    width: 55px;
+    padding-left: 25px;
+    background: url("../images/change_word.png") no-repeat left center;
+    font-size: 1.1em;
+    display: inline-block;
+    line-height: 30px;
+    vertical-align: middle;
+    color: #8a8a8a;
+    font-weight: normal;
+    cursor: pointer;
+}
+#change_word:hover,#change_word2:hover{
+    background: url("../images/change_red.png") no-repeat left center;
+    color: #ebb15e;
+}

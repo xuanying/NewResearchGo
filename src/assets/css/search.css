@@ -1,0 +1,120 @@
+/*搜索结果列表块*/
+.result_box{
+    padding: 40px 60px;
+    padding-top: 10px;
+}
+.result_box p.sl_number{
+    display: none;
+    float: left;
+    margin-top: -40px;
+}
+.result_box div.re_block{
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px dashed #a2a2a2;
+}
+.result_box div.re_block:last-child{
+    border-bottom: none;
+}
+.result_box h1 a{
+    font-size: 1.3em;
+    color: #22868c;
+    text-decoration: none;
+}
+.result_box h1 a:hover{
+    color: #2caeb5;
+    text-decoration: underline;
+}
+.result_box p.se_author{
+    background: url('../img/author.png') no-repeat left center;
+    background-size: 24px;
+    padding-left: 30px;
+}
+.result_box p.se_author a{
+    color: #626262;
+    font-size: 0.9em;
+    line-height: 30px;
+    text-decoration: underline;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.result_box p.se_author a:first-child{
+    margin-left: 0;
+}
+.result_box p.se_jour{
+    background: url('../img/jour.png') no-repeat left center;
+    background-size: 23px;
+    padding-left: 30px;
+}
+.result_box p.se_jour a{
+    color: #2c2c2c;
+    font-size: 0.9em;
+    line-height: 30px;
+    text-decoration: none;
+}
+.result_box p.se_jour a:hover{
+    text-decoration: underline;
+}
+.result_box .se_year{
+    float: right;
+    position: relative;
+    top: 3px;
+    font-size: 1.2em;
+    color:#626262;
+    z-index: 0;
+}
+.result_box p.se_abs{
+    margin-top: 10px;
+    color: #2c2c2c;
+    font-size: 1em;
+}
+.result_box span.abs_more{
+    color: #22868c;
+    cursor: pointer;
+}
+.result_box .se_relate{
+    margin: 30px 40px 10px 20px;
+    border: 2px dashed #ebb15e;
+    border-radius: 5px;
+    padding: 20px;
+    position: relative;
+}
+.result_box .se_relate img{
+    width: 100px;
+    height: auto;
+    background-color: #fff;
+    position: absolute;
+    top: -18px;
+    left: -22px;
+}
+.result_box .se_relate p{
+    margin-left: 15px;
+}
+.result_box .se_relate a{
+    color: #2c2c2c;
+    text-decoration: none;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.result_box .se_relate a:hover{
+    text-decoration: underline;
+}
+.result_box .se_relate p span{
+    padding: 2px 5px 2px 5px;
+    border-radius: 4px;
+    color: #ee9967;
+    font-size: 1em;
+    line-height: 35px;
+    background-color: #fddfdf;
+    margin-right: 5px;
+}
+.result_box .se_type{
+    margin-top: 10px;
+    margin-right: 5px;
+    margin-left: 0;
+    font-size: 0.8em;
+    color: #989898;
+    border: 1px dotted #adadad;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
