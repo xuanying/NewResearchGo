@@ -9,7 +9,7 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    { path: '/',name: 'Main',component: HelloWorld,meta: {requiresAuth: true}},
+    {path: '/',name: 'Main',component: HelloWorld,meta: {requiresAuth: true}},
     {path:'/findDirection',name:'FindDirection',component:FindDirection,meta: {requiresAuth: true}},
     {path:'/readPaper',name:'ReadPaper',component:ReadPaper},
     {path:'/login',name:'Login',component:Loginwindow}

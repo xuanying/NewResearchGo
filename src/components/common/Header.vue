@@ -130,7 +130,6 @@
         isShow: false,
         isLogin: false,
         isShowSearchbox: this.showSearchbox,
-        fluCookie:this.flushCookie,
         user_info: '',
         searchboxfb: '',
         isFoucs: false,
@@ -142,9 +141,10 @@
         vCode:'',
       }
     },
-    props: ['showSearchbox','flushCookie'],
+    props: ['showSearchbox'],
     created() {
       this.getInfo()
+      
     },
     methods: {
       getInfo() {
@@ -228,13 +228,16 @@
             setCookie('loginData',JSON.stringify(response.data),7)
             console.log( 'userLogin setCookie success' + getCookie('loginData'))
           } else {
-            console.log('服务器错误，无法获取数据')
+            alert('服务器错误，无法获取数据')
           }
         }).catch(error => {
           console.log(error)
         })
       },
-      userSignin(){}
+      userSignin(){
+        alert('注册成功')
+        this.hideLoginWin()
+      }
     }
   }
 

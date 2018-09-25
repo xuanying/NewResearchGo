@@ -29,7 +29,7 @@
               <img src="../../assets/images/dire.png">
               <span>我要找方向</span>
             </li>
-            <li id="paper">
+            <li id="paper" @click="readPaper()">
               <img src="../../assets/images/paper.png">
               <span>我要看新文章</span>
             </li>
@@ -99,9 +99,13 @@
           name: 'FindDirection'
         })
       },
+      readPaper(){
+        this.$router.push({
+          name:'ReadPaper'
+        })
+      },
       isMask(data){
         this.bg_mask = data
-        console.log(data)
       }
     }
   }

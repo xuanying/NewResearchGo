@@ -26,7 +26,7 @@
     text-decoration: underline;
 }
 .result_box p.se_author{
-    background: url('../img/author.png') no-repeat left center;
+    background: url('../images/author.png') no-repeat left center;
     background-size: 24px;
     padding-left: 30px;
 }
@@ -42,7 +42,7 @@
     margin-left: 0;
 }
 .result_box p.se_jour{
-    background: url('../img/jour.png') no-repeat left center;
+    background: url('../images/jour.png') no-repeat left center;
     background-size: 23px;
     padding-left: 30px;
 }
