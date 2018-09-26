@@ -29,6 +29,7 @@
     background: url('../images/author.png') no-repeat left center;
     background-size: 24px;
     padding-left: 30px;
+    display: inline-block;
 }
 .result_box p.se_author a{
     color: #626262;
@@ -89,6 +90,7 @@
 }
 .result_box .se_relate p{
     margin-left: 15px;
+    display: inline-block;
 }
 .result_box .se_relate a{
     color: #2c2c2c;
