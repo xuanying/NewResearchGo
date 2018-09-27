@@ -1,8 +1,8 @@
 <template>
   <div>
+    <div class="bg_mask" v-show="bg_mask"></div>
     <Header :showSearchbox="isShowSearchbox" @isMask="isMask"></Header>
     <div class="main">
-      <div class="bg_mask" v-show="bg_mask"></div>
       <div class="main_content">
         <section class="list_head">
           <span>筛选</span>

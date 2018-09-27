@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div class="bg_mask" v-show="bg_mask"></div>
     <Header :showSearchbox="isShowSearchbox" @isMask="isMask"></Header>
     <div class="main">
       <div class="main_content">
@@ -112,7 +113,7 @@
               </ul>
             </div>
             <div class="moreinformation" id="pagerArea" style="-moz-user-select:none;">
-              <paginate
+              <!-- <paginate
                 v-model="page"
                 :page-count="pageCount"
                 :page-range="3"
@@ -128,8 +129,8 @@
                 :next-class="'ignore next-item'"
                 :next-link-class="'next-link-item'"
                 :disabled-class="'ignore disabled'">
-              </paginate>
-              <!-- <paginate
+              </paginate> -->
+              <paginate
                 v-model="page"
                 :page-count="pageCount"
                 :page-range="3"
@@ -143,7 +144,7 @@
                 :next-link-class="'item'"
                 :break-view-link-class="'break-view-link'"
                 :no-li-surround="true"
-                ></paginate> -->
+                ></paginate>
             </div>
           </section>
         </div>
@@ -408,6 +409,9 @@
           }
         }
         console.log(this.paperFinallyShow)
+      },
+      isMask(data) {
+        this.bg_mask = data
       }
     },
     filters: {
@@ -426,8 +430,8 @@
 </script>
 
 <style scoped>
-  @import 'https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.css';
-  /* @import 'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/components/menu.min.css'; */
+  /* @import 'https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.css'; */
+  @import 'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/components/menu.min.css';
   @import '../../assets/css/base.css';
   @import '../../assets/css/articleDetail.css';
 </style>
