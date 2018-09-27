@@ -15,7 +15,7 @@
         <section class="result_box">
           <div class="re_block" v-for="(item,index) in paperInfo" :key="index" v-show="changepage(index)">
             <span class="se_year">{{item.Paper_Year}}</span>
-            <h1><a>{{item.Paper_Title}}</a></h1>
+            <h1><a @click="toArticleDetail(item.Paper_Title)">{{item.Paper_Title}}</a></h1>
             <p class="se_author" v-for="(Author,index) in item.Paper_Author" :key="index+1000">
               <a>{{Author.Author_Name + '(' + Author.Author_Level + ')'}}</a>,
             </p>
@@ -26,12 +26,17 @@
                 @click="showAbsDetailBtn(index)">Less</span></p>
             <div class="se_relate" title="与我相关">
               <img src="../../assets/images/about.png">
-              <p class="re_keyword" v-for="(Relkeyword,index) in item.Rel_Keyword" :key="index+10000">我的方向：
+              <p>我的方向：
+                <label class="re_keyword" v-for="(Relkeyword,index) in item.Rel_Keyword" :key="index+10000">
                 <a> {{Relkeyword.Keyword}}</a>
-                <span> {{Relkeyword.Rel_Level}} </span>,</p>
-              <p class="re_author" v-for="(Relfriend,index) in item.Rel_Friend" :key="index+100000">我的好友：
+                <span> {{Relkeyword.Rel_Level}} </span>,</label>
+              </p>
+              <p>我的好友：
+                <label class="re_author" v-for="(Relfriend,index) in item.Rel_Friend" :key="index+100000">
                 <a>{{Relfriend.Author_Name}}</a>
-                <span>{{Relfriend.Rel_Level}}</span></p>
+                <span>{{Relfriend.Rel_Level}}</span>,</label>
+              </p>
+              
             </div>
           </div>
         </section>
@@ -112,6 +117,14 @@
         this.showAbsDetail = false
         this.pIndex = -1
         console.log(index + 'index')
+      },
+      toArticleDetail(paperTitle){
+        this.$router.push({
+          name:'ArticleDetail',
+          params:{
+            title:paperTitle
+          }
+        })
       }
     },
     filters: {

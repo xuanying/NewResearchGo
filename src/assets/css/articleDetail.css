@@ -1,3 +1,25 @@
+/*-----------------主体部分-----------------*/
+.main{
+    width: 100%;
+}
+.main_content{
+    width: 1000px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding-bottom: 20px;
+}
+/* 遮罩层 */
+.bg_mask{
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    float: left;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    background: rgba(0,0,0,0.3);
+    z-index: 1;
+}
 .article_messages{
     padding: 30px 60px;
 }
@@ -42,7 +64,13 @@
     display: inline-block;
     margin-right: 20px;
 }
-/*摘要展开 ----by Qiu*/
+.detail_message .author{
+    background: url('../images/author.png') no-repeat left center;
+    background-size: 24px;
+    padding-left: 30px;
+    display: inline-block;
+}
+/*摘要展开*/
 .abstract .detail_message p{
     display: inline-block;
 }
@@ -99,6 +127,9 @@
     color: #fff;
     border: 2px solid #ffffff;
     border-bottom: 0;
+}
+.graybg{
+    background-color: grey;
 }
 .introduction_head ul{
     display: inline-block;
@@ -167,7 +198,7 @@
     text-decoration: underline;
 }
 .new_list li p.ar_author{
-    background: url('../img/author.png') no-repeat left center;
+    background: url('../images/author.png') no-repeat left center;
     background-size: 24px;
     padding-left: 30px;
     color: #626262;
@@ -184,7 +215,7 @@
     margin-left: 0;
 }
 .new_list li p.ar_jour{
-    background: url('../img/jour.png') no-repeat left center;
+    background: url('../images/jour.png') no-repeat left center;
     background-size: 23px;
     padding-left: 30px;
 }

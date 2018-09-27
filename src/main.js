@@ -3,7 +3,11 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import VueHighcharts from 'highcharts' 
+import Paginate from 'vuejs-paginate'
 
+Vue.use(VueHighcharts)
+Vue.component('paginate', Paginate)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

@@ -21,6 +21,9 @@
     z-index: 1;
 }
 /*head*/
+a{
+    cursor: pointer;
+}
 .list_head{
 	margin: 30px 50px;
     margin-bottom: 0;
