@@ -15,7 +15,7 @@
           </section>
           <section class="basic_informations">
             <section class="authors">
-              <h2>作者</h2>
+              <h2 id="authorrrrrr">作者</h2>
               <div class="detail_message">
                 <ul>
                   <li class="author" v-for="(Author,authorIndex) in paperInfo.Paper_Author" :key="authorIndex">
@@ -129,6 +129,21 @@
                 :next-link-class="'next-link-item'"
                 :disabled-class="'ignore disabled'">
               </paginate>
+              <!-- <paginate
+                v-model="page"
+                :page-count="pageCount"
+                :page-range="3"
+                :margin-pages="1"
+                :click-handler="functionName"
+                :prev-text="'Prev'"
+                :next-text="'Next'"
+                :container-class="'ui pagination menu'"
+                :page-link-class="'item'"
+                :prev-link-class="'item'"
+                :next-link-class="'item'"
+                :break-view-link-class="'break-view-link'"
+                :no-li-surround="true"
+                ></paginate> -->
             </div>
           </section>
         </div>
@@ -411,8 +426,8 @@
 </script>
 
 <style scoped>
+  @import 'https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.css';
+  /* @import 'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/components/menu.min.css'; */
   @import '../../assets/css/base.css';
   @import '../../assets/css/articleDetail.css';
-  @import url('https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.css');
-
 </style>

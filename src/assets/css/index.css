@@ -34,7 +34,10 @@
 /* ---------搜索框---------- */
 .search_con{
     margin: 20xp 0 20px 0;
-    position: relative;
+    left: 0;
+    right: 0;
+    top: 270px;
+    position: absolute;
     text-align: center;
 }
 .search_con input{
@@ -94,6 +97,8 @@
 }
 /* 选项块 */
 .choose_box{
+    position: relative;
+    top: 150px;
     width: 100%;
     height: 100px;
     margin: 60px 0 20px 0;
