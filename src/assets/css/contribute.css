@@ -30,7 +30,7 @@
 .list_head input[type="button"]{
     color: #6d6d6d;
     border: 0;
-    background: url('../img/filter.png') no-repeat center;
+    background: url('../images/filter.png') no-repeat center;
     background-size: 25px;
     border-radius: 0 5px 5px 0;
     width: 40px;
@@ -122,7 +122,7 @@
     line-height: 40px;
 }
 .my_keywords:hover{
-    background: url("../img/keywords.png") no-repeat top left;
+    background: url("../images/keywords.png") no-repeat top left;
     background-size: 100px;
     border-radius: 10px;
     margin-top: 15px;

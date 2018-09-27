@@ -33,7 +33,7 @@
               <img src="../../assets/images/paper.png">
               <span>我要看新文章</span>
             </li>
-            <li id="contribute">
+            <li id="contribute" @click="toContribute()">
               <img src="../../assets/images/org.png">
               <span>我要投稿</span>
             </li>
@@ -102,6 +102,11 @@
       readPaper(){
         this.$router.push({
           name:'ReadPaper'
+        })
+      },
+      toContribute(){
+        this.$router.push({
+          name:'Contribute'
         })
       },
       isMask(data){

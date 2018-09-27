@@ -5,6 +5,7 @@ import HelloWorld from '@/components/pages/HelloWorld'
 import FindDirection from '@/components/pages/FindDirection'
 import ReadPaper from '@/components/pages/ReadPaper'
 import ArticleDetail from '@/components/pages/ArticleDetail'
+import Contribute from '@/components/pages/Contribute'
 
 Vue.use(Router)
 
@@ -14,6 +15,7 @@ export default new Router({
     {path:'/findDirection',name:'FindDirection',component:FindDirection,meta: {requiresAuth: true}},
     {path:'/readPaper',name:'ReadPaper',component:ReadPaper},
     {path:'/login',name:'Login',component:Loginwindow},
-    {path:'/articleDetail',name:'ArticleDetail',component:ArticleDetail}
+    {path:'/articleDetail',name:'ArticleDetail',component:ArticleDetail},
+    {path:'/contribute',name:'Contribute',component:Contribute}
   ]
 })
