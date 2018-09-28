@@ -16,6 +16,18 @@ li{
 button,input{
     outline: none;
 }
+/* 遮罩层 */
+.bg_mask{
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    float: left;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    background: rgba(0,0,0,0.3);
+    z-index: 1;
+}
 /* ----------导航栏---------- */
 .topbar{
     height: 70px;

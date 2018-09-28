@@ -40,7 +40,7 @@
 #change_word,#change_word2{
 	position: relative;
 	top: 10px;
-	z-index: 0;
+    z-index: 0;
 }
 #change_word,#change_word2{
     float: right;
@@ -69,12 +69,14 @@
     padding-bottom: 30px;
     min-height: 300px;
 }
-.jour_part:nth-child(odd){
+/* .jour_part:nth-child(odd){
     border-bottom: 1px dashed #a2a2a2;
-}
+} */
 .part_left{
     width: 50%;
     display: inline-block;
+    overflow: hidden;
+    border-bottom: 1px dashed #a2a2a2;
 }
 .part_left h1 a{
     font-size: 1.3em;
@@ -113,6 +115,7 @@
     float: right;
     width: 350px;
     height: 300px;
+    display: inline-block;
     margin-right: 20px;
     margin-top: 20px;
     cursor: pointer;

@@ -6,6 +6,8 @@ import FindDirection from '@/components/pages/FindDirection'
 import ReadPaper from '@/components/pages/ReadPaper'
 import ArticleDetail from '@/components/pages/ArticleDetail'
 import Contribute from '@/components/pages/Contribute'
+import KeywordDetail from '@/components/pages/KeywordDetail'
+import Test from '@/components/pages/Test'
 
 Vue.use(Router)
 
@@ -16,6 +18,8 @@ export default new Router({
     {path:'/readPaper',name:'ReadPaper',component:ReadPaper},
     {path:'/login',name:'Login',component:Loginwindow},
     {path:'/articleDetail',name:'ArticleDetail',component:ArticleDetail},
-    {path:'/contribute',name:'Contribute',component:Contribute}
+    {path:'/contribute',name:'Contribute',component:Contribute},
+    {path:'/keywordDetail',name:'KeywordDetail',component:KeywordDetail},
+    {path:'/test',name:'Test',component:Test}
   ]
 })
