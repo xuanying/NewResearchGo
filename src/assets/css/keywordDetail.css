@@ -138,7 +138,7 @@
     text-decoration: underline;
 }
 .new_list li p.ar_author{
-    background: url('../img/author.png') no-repeat left center;
+    background: url('../images/author.png') no-repeat left center;
     background-size: 24px;
     padding-left: 30px;
     color: #626262;
@@ -155,7 +155,7 @@
     margin-left: 0;
 }
 .new_list li p.ar_jour{
-    background: url('../img/jour.png') no-repeat left center;
+    background: url('../images/jour.png') no-repeat left center;
     background-size: 23px;
     padding-left: 30px;
 }
