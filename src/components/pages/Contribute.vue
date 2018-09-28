@@ -59,7 +59,7 @@ import axios from 'axios'
                 tagData:[],
                 lowjourIndex:0,
                 upjourIndex:2,
-                tagConfig:{'radius':100,'maxFont':30}
+                tagConfig:{'radius':130,'maxFont':30}
             }
         },
         created(){
@@ -88,13 +88,10 @@ import axios from 'axios'
             tagHandler(){
                 console.log(this.contributeInfo)
                 this.contributeInfo.Journal_Keyword.forEach(element => {
-                    console.log(element)
                     this.tagData.push('name',element)
                 });
-                console.log(this.tagData)
             },
             clickTagItem(tag){
-                console.log(tag.name)
                 this.$router.push({
                     name:'KeywordDetail'
                 })

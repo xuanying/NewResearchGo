@@ -24,8 +24,8 @@ export default {
         radius: 120, // 滚动半径，单位px
         maxFont: 24, // 最大字体大小
         color: null, // 字体颜色。为空时随机
-        rotateAngleXbase: 600, // 默认旋转速度基数，数越小速度越快
-        rotateAngleYbase: 600,
+        rotateAngleXbase: 800, // 默认旋转速度基数，数越小速度越快
+        rotateAngleYbase: 800,
         hover: true // 是否开启悬浮联动
       },
       tagList: [],
@@ -126,8 +126,9 @@ export default {
             this.$refs.wrapper.offsetHeight / 2 -
             tag.ele.offsetHeight / 2) +
           'px)'
-        tag.ele.style.opacity = tag.z / r + 0.8
-        tag.ele.style.fontSize = (tag.z / r / 2 + 0.5) * maxFont + 'px'
+        tag.ele.style.opacity = 0.9
+        tag.ele.style.fontSize = '20px'
+        // tag.ele.style.fontSize = (tag.z / r / 2 + 0.5) * maxFont + 'px'
       }
     },
     rotateX(tag) {

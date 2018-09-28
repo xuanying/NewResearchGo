@@ -8,18 +8,24 @@
 <script>
 import HighCharts from 'highcharts'
     export default {
+      data(){
+        return{
+          optionNow:{}
+        }
+      },
+      name:'Chart',
         props: {
-    id: {
-      type: String
-    },
-    option: {
-      type: Object
-    }
-  },
+          id: {
+            type: String
+          },
+          option: {
+            type: Object
+          }
+        },
   mounted() {
     HighCharts.chart(this.id,this.option)
   }
-    }
+}
 </script>
 
 <style scoped>

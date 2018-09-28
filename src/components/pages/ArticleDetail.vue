@@ -221,7 +221,6 @@
             num_list.push(yearObj[key][0])
             high_list.push(yearObj[key][1])
           }
-
           this.option = {
             credits:{
                enabled: false
