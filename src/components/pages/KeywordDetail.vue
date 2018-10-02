@@ -18,14 +18,16 @@
               <h2>领域</h2>
               <div class="detail_message">
                 <ul>
-                  <li></li>
+                  <li>{{keywordInfo.Keyword_Domain}}</li>
                 </ul>
               </div>
             </section>
             <section class="masters">
               <h2>作者列表</h2>
               <div class="detail_message">
-                <ul></ul>
+                <ul>
+                  <li v-for="(expertList,expertIndex) in keywordInfo.Keyword_Scholar" :key="expertIndex"><a>{{expertList.Author_Name + '(' + expertList.Author_Level + ')'}}</a></li>
+                </ul>
               </div>
             </section>
           </section>
@@ -33,31 +35,28 @@
             <header class="introduction_head">
               <h2 class="title">文章列表</h2>
               <ul>
-                <li id="time_ordering" class="active">按时间排列</li>
-                <li id="level_ordering">按档次排列</li>
+                <li id="time_ordering"  @click="orderByTime()" :class="{'active':isActive}">按时间排列</li>
+                <li id="level_ordering" :class="{'active':!isActive}" @click="orderByQuality()">按档次排列</li>
               </ul>
             </header>
-            <div class="wait_data" style="text-align: center;display: inline-block;float: right;font-size: 0.8em">正在加载……</div>
             <div class="articlelists">
               <ul class="new_list">
-                <li>
-                  <h3><span class="ar_year">2017</span><a href="#">A Novel Pattern Clustering Algorithm Based on
-                      Particle Swarm Optimization Joint Adaptive Wavelet Neural Network Model</a></h3>
-                  <p class="ar_author"> <a>Shoubao Su(R5)</a>;<a>Haifeng Guo(R5)</a>;<a>Haimei Tian(R5)</a>;<a>Gang
-                      Wu(R5)</a></p>
-                  <p class="ar_jour"><a>MOBILE NETWORKS & APPLICATIONS(C)</a></p>
-                  <p class="ar_domain">领域：<span>Computer Science(all) ;Hardware and Architecture ;Computer Networks and
-                      Communications ;Information Systems ;Software ;</span></p>
-                  <p class="ar_level">档次：<span>C</span></p>
+                <li v-for="(paperList,paperIndex) in paperFinally" :key="paperIndex">
+                  <h3><span class="ar_year">{{paperList.Paper_Year}}</span><a>{{paperList.Paper_Title}}</a></h3>
+                  <p class="ar_author"> 
+                    <a v-for="(authorList,authorIndex) in paperList.Paper_Author" :key="authorIndex">{{authorList.Author_Name + '(' + authorList.Author_Level + ')'}}</a>;
+                  </p>
+                  <p class="ar_jour"><a>{{paperList.Paper_Journal + '(' + paperList.Journal_Level + ')'}}</a></p>
+                  <p class="ar_domain">领域：<span v-for="(domainlevel,domain,domainIndex) in paperList.Paper_Domain" :key="domainIndex">{{domain}}</span></p>
+                  <p class="ar_level">档次：<span>{{paperList.Paper_Level}}</span></p>
                   <div class="item_info">
-                    <span class="high">2</span>
-                    <span class="cite">6</span>
+                    <span class="high">{{paperList.Cited_Num}}</span>
+                    <span class="cite">{{paperList.Cited_High}}</span>
                   </div>
                 </li>
               </ul>
             </div>
             <div class="moreinformation" id="pagerArea" style="-moz-user-select:none;"></div>
-            <div class="wait_data" style="text-align: center;margin-top: 10px">正在加载……</div>
           </section>
         </div>
       </div>
@@ -78,8 +77,10 @@
         keywordInfo:'',
         id: '热度柱状图',
         option: {},
-        flag:false
-        
+        flag:false,
+        isActive:true,
+        paperFinally:[],
+
       }
     },
     components: {
@@ -98,6 +99,7 @@
                 if(response.status == 200){
                     this.keywordInfo = response.data
                     this.drawChart()
+                    this.orderByTime()
                 }
             }).catch(error=>{
                 alert('服务器错误，获取数据失败')
@@ -115,7 +117,7 @@
             num_list.push(yearObj[key][0])
             high_list.push(yearObj[key][1])
           }
-          console.log(num_list)
+          // console.log(num_list)
           this.option = {
             credits:{
                enabled: false
@@ -209,7 +211,30 @@
         }
         this.flag=true
       },
-
+      orderByTime(){
+        this.isActive = true
+        console.log(this.keywordInfo.Keyword_Paper)
+        this.paperFinally = this.keywordInfo.Keyword_Paper.sort(function(a, b){
+             if(a.Paper_Year > b.Paper_Year) return -1;
+             if(a.Paper_Year < b.Paper_Year) return 1;
+             if(a.Paper_Year = b.Paper_Year){
+                 a.Paper_Level.localeCompare(b.Paper_Level);
+             }
+             return 0;
+         });
+      },
+      orderByQuality(){
+        this.isActive =false
+        this.paperFinally = this.keywordInfo.Keyword_Paper.sort(function(a, b) {
+             if(a.Paper_Level.localeCompare(b.Paper_Level) != 0){
+                 return a.Paper_Level.localeCompare(b.Paper_Level);//比较两篇文章的等级高低并返回排序
+             }else {
+                 if(a.Paper_Year > b.Paper_Year) return -1;
+                 if(a.Paper_Year < b.Paper_Year) return 1;
+                 return 0;
+             }
+         })
+      }
     }
 
   }

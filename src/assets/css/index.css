@@ -111,6 +111,7 @@
     width: 100px;
     height: 120px;
     position: relative;
+    cursor: pointer;
 }
 .choose_box li img{
     display: block;
