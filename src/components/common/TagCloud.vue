@@ -46,13 +46,13 @@ export default {
       this.timer = null
     }
   },
-  watch: {
-    data() {
-      this.$nextTick(() => {
-        this._initTags()
-      })
-    }
-  },
+  // watch: {
+  //   data() {
+  //     this.$nextTick(() => {
+  //       this._initTags()
+  //     })
+  //   }
+  // },
   methods: {
     _initTags() {
       this.rotateAngleX = Math.PI / this.option.rotateAngleXbase

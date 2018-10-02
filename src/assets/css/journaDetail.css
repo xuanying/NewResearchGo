@@ -99,11 +99,18 @@
     z-index: 1;
 }
 #hot_keywords,#potential_keywords{
-    width: 880px;
+    width: 100%;
     height: 350px;
+    cursor: pointer;
 }
 #hot_keywords .span_list,#potential_keywords .span_list{
     line-height: 40px;
+}
+#hot_keywords .hotKeywordTag,#potential_keywords .hotKeywordTag{
+    position: relative;
+    right: 0;
+    left: 0;
+    top:50px;
 }
 /*------文章数排名前十作者------*/
 .jour_auth{

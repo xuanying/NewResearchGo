@@ -7,6 +7,7 @@ import ReadPaper from '@/components/pages/ReadPaper'
 import ArticleDetail from '@/components/pages/ArticleDetail'
 import Contribute from '@/components/pages/Contribute'
 import KeywordDetail from '@/components/pages/KeywordDetail'
+import JournaDetail from '@/components/pages/JournaDetail'
 import Test from '@/components/pages/Test'
 
 Vue.use(Router)
@@ -20,6 +21,8 @@ export default new Router({
     {path:'/articleDetail',name:'ArticleDetail',component:ArticleDetail},
     {path:'/contribute',name:'Contribute',component:Contribute},
     {path:'/keywordDetail',name:'KeywordDetail',component:KeywordDetail},
-    {path:'/test',name:'Test',component:Test}
+    {path:'/journaDetail',name:'JournaDetail',component:JournaDetail},
+    {path:'/test',name:'Test',component:Test},
+    
   ]
 })

@@ -24,7 +24,18 @@ import HighCharts from 'highcharts'
         },
   mounted() {
     HighCharts.chart(this.id,this.option)
-  }
+  },
+  // watch:{
+  //   option:{
+  //     handler(newvalue,oldvalue){
+  //     //  this.$nextTick(()=>{
+  //     //     console.log('我是nextTick')
+  //     //  })
+  //      HighCharts.chart(this.id,this.option)
+  //     },
+  //     deep:true
+  //   }
+  // }
 }
 </script>
 

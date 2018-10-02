@@ -5,7 +5,7 @@
         <div class="main">
         <div class="main_content">
             <section class="list_head">
-                <span>输入关键词</span>
+                <span @click="tagHandler()">输入关键词</span>
                 <div class="filter_div">
                     <input id="list_filter" name="filter" class="input" type="text">
                     <input type="button" value="">
@@ -16,7 +16,7 @@
                 <div class="jour_part" v-for="(JournalInfo,journalIndex) in contributeInfo" :key="journalIndex"
                 v-show="journalIndex >= lowjourIndex && journalIndex < upjourIndex">
                     <div class="part_left">
-                        <h1 class="rankA"><a href="">{{JournalInfo.Journal}}</a></h1>
+                        <h1 class="rankA"><a @click="toJournaDetail(JournalInfo.Journal)">{{JournalInfo.Journal}}</a></h1>
                         <p>录用数：高于同档次平均<span>{{JournalInfo.Journal_Trend}}</span></p>
                         <p style="display: inline-block;">我的关键词：</p>
                         <div class="keyword_info">
@@ -59,7 +59,7 @@ import axios from 'axios'
                 tagData:[],
                 lowjourIndex:0,
                 upjourIndex:2,
-                tagConfig:{'radius':130,'maxFont':30}
+                tagConfig:{'radius':110,'maxFont':30}
             }
         },
         created(){
@@ -79,17 +79,22 @@ import axios from 'axios'
                 }).then(response=>{
                     if(response.status == 200){
                         this.contributeInfo = response.data
-                        this.tagHandler()
+                        // this.tagHandler()
                     }
                 }).catch(error=>{
-
+                    alert('服务器错误，数据获取失败')
                 })
             },
             tagHandler(){
-                console.log(this.contributeInfo)
-                this.contributeInfo.Journal_Keyword.forEach(element => {
-                    this.tagData.push('name',element)
-                });
+                console.log( this.contributeInfo[0].Journal_Trend)
+                let obj = {}
+                this.contributeInfo.forEach(journal => {
+                    journal.Journal_Keyword.forEach(keyword=>{
+                        obj['name'] = keyword['name']
+                        this.tagData.push(obj)
+                    })
+                })
+                console.log(this.tagData)
             },
             clickTagItem(tag){
                 this.$router.push({
@@ -107,6 +112,12 @@ import axios from 'axios'
                     this.lowjourIndex = this.upjourIndex
                     this.upjourIndex = this.contributeInfo.length
                 }
+            },
+            toJournaDetail(journaName){
+                // console.log(journaName)
+                this.$router.push({
+                    name:'JournaDetail'
+                })
             }
         }
 }
