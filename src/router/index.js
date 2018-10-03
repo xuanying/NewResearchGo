@@ -8,6 +8,7 @@ import ArticleDetail from '@/components/pages/ArticleDetail'
 import Contribute from '@/components/pages/Contribute'
 import KeywordDetail from '@/components/pages/KeywordDetail'
 import JournaDetail from '@/components/pages/JournaDetail'
+import OrgDetail from '@/components/pages/OrgDetail'
 import Test from '@/components/pages/Test'
 
 Vue.use(Router)
@@ -22,6 +23,7 @@ export default new Router({
     {path:'/contribute',name:'Contribute',component:Contribute},
     {path:'/keywordDetail',name:'KeywordDetail',component:KeywordDetail},
     {path:'/journaDetail',name:'JournaDetail',component:JournaDetail},
+    {path:'/orgDetail',name:'OrgDetail',component:OrgDetail},
     {path:'/test',name:'Test',component:Test},
     
   ]
