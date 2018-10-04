@@ -37,7 +37,7 @@
               <img src="../../assets/images/org.png">
               <span>我要投稿</span>
             </li>
-            <li class="cur" id="cur">
+            <li class="cur" id="cur" @click="toRank()">
               <img src="../../assets/images/cur.png">
               <span>我很好奇</span>
             </li>
@@ -94,7 +94,6 @@
         this.isBlur = true
       },
       findDirection() {
-        console.log('findDirection.....')
         this.$router.push({
           name: 'FindDirection'
         })
@@ -107,6 +106,11 @@
       toContribute(){
         this.$router.push({
           name:'Contribute'
+        })
+      },
+      toRank(){
+        this.$router.push({
+          name:'Rank'
         })
       },
       isMask(data){

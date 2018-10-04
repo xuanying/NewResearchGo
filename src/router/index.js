@@ -9,6 +9,8 @@ import Contribute from '@/components/pages/Contribute'
 import KeywordDetail from '@/components/pages/KeywordDetail'
 import JournaDetail from '@/components/pages/JournaDetail'
 import OrgDetail from '@/components/pages/OrgDetail'
+import Rank from '@/components/pages/Rank'
+import FirstSignin from '@/components/pages/FirstSignin'
 import Test from '@/components/pages/Test'
 
 Vue.use(Router)
@@ -24,6 +26,8 @@ export default new Router({
     {path:'/keywordDetail',name:'KeywordDetail',component:KeywordDetail},
     {path:'/journaDetail',name:'JournaDetail',component:JournaDetail},
     {path:'/orgDetail',name:'OrgDetail',component:OrgDetail},
+    {path:'/rank',name:'Rank',component:Rank},
+    {path:'/firstSignin',name:'FirstSignin',component:FirstSignin},
     {path:'/test',name:'Test',component:Test},
     
   ]
