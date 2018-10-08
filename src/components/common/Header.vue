@@ -237,6 +237,7 @@
       userSignin(){
         alert('注册成功')
         this.hideLoginWin()
+        
       }
     }
   }

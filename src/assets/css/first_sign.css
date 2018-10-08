@@ -9,7 +9,7 @@ li{
 a{
     text-decoration: none;
 }
-body{
+.firstSigninBody{
     background: url('../images/first_bg.jpg') 0 0 repeat-y;
 }
 
@@ -124,16 +124,18 @@ body{
     background-color: #fdfdfd;
     border: 1px solid #c6c6c6;
     position: absolute;
-    left: 180px;
-    width: 400px;
-    display: none;
+    top:10%;
+    left: 25%;
+    width: 800px;
+    height: auto;
+    z-index: 2;
 }
 .field_choose_box_head{
     width: 100%;
 }
 .field_choose_box_tabs{
     width: 91%;
-    height: 20px;
+    height: 40px;
     margin: 10px auto 0 auto;
     border-bottom: 1px solid #c6c6c6;
 }
@@ -143,11 +145,11 @@ body{
     background-color: #ebebeb;
     margin: 0 1px 5px 1px;
     padding: 2px 0;
-    width: 12px;
+    width: 24px;
     cursor: pointer;
     display: inline-block;
     font-family: "Century Gothic","Times New Roman", Times, serif;
-    font-size: 0.7em;
+    font-size: 1.2em;
     /* 不允许选中文本 */
     user-select: none;
     -moz-user-select: none;
@@ -164,13 +166,13 @@ body{
     margin: 10px auto;
 }
 .choose_content li{
-    display: inline-block;
-    margin: 2px 5px;
-    font-size: 0.7em;
+    margin: 6px 15px;
+    font-size: 1.1em;
+    display: block;
     text-decoration: underline;
     font-family: "Microsoft YaHei", "Times New Roman", Times, serif;
     cursor: pointer;
-    color: #565656;
+    color: #72ACE3;
 }
 .field_choose_box_footer{
     width: 95%;
