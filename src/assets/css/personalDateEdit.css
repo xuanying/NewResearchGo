@@ -96,30 +96,34 @@
     vertical-align: top;
 }
 .text_messages input{
+    display: inline-block;
+    vertical-align: middle;
     width: 270px;
     height: 30px;
     border: 1px solid #cecece;
     border-radius: 3px;
     padding-left: 5px;
+    margin-top: 5px;
 }
 .text_messages input.short{
     width: 235px;
 }
+.text_messages .itemp{
+    display: inline-block;
+    margin-left: 85px;
+}
 .text_messages .add_message,.text_messages .sub_message{
     background-color: #bababa;
     display: inline-block;
-    position: absolute;
     color: #ffffff;
     border: 0;
     border-radius: 15px;
-    cursor: default;
-    left: 335px;
+    cursor: pointer;
+    
     width: 30px;
     padding: 0;
 }
-.text_messages .add_message{
-    left: 370px;
-}
+
 .text_messages #introduce{
     width: 270px;
     height: 200px;
@@ -157,18 +161,19 @@
 .new_portrait{
     width: 100vw;
     height: 100vh;
-    background-color: rgba(157, 157, 157, 0.16);
-    position: fixed;
+    /* background-color: rgba(157, 157, 157, 0.16); */
+    position: relative;
     top: 0;
+    bottom: 0;
+    right: 0;
     left: 0;
     z-index: 3;
-    display: none;
 }
 .portrait_select_box{
     width: 700px;
     height: 500px;
     position: fixed;
-    background-color: #ffffff;
+    background-color: #e2e2e2;
     z-index: 2;
     top: 100px;
     border: 1px solid #cecece;

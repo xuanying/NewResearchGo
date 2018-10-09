@@ -26,7 +26,7 @@
             <img class="portrait" :src="user_info.Portrait">
             <transition @enter="enter" @leave="leave">
               <ul class="topbar_list" v-show="isShow">
-                <li><a >我的主页</a></li>
+                <li><a @click="toAuthorHomePage()">我的主页</a></li>
                 <li><a >我的邮件</a></li>
                 <li><a >分享</a></li>
                 <li @click="logout()"><a>退出登录</a></li>
@@ -235,9 +235,16 @@
         })
       },
       userSignin(){
-        alert('注册成功')
+        alert('注册成功!前往完善信息，享受更精准的推荐!')
         this.hideLoginWin()
-        
+        this.$router.push({
+          name:'FirstSignin'
+        })
+      },
+      toAuthorHomePage(){
+        this.$router.push({
+          name:'AuthorHomePage'
+        })
       }
     }
   }

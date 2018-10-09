@@ -101,13 +101,17 @@ import axios from 'axios'
                 this.fieldArr.push(1)
             },
             subField(){
-                this.fieldArr.pop()
+                if(this.fieldArr.length > 1){
+                    this.fieldArr.pop()
+                }
             },
             addKeyword(){
                 this.keywordArr.push(0)
             },
             subKeyword(){
-                this.keywordArr.pop()
+                if(this.keywordArr.length > 1){
+                    this.keywordArr.pop()
+                }
             },
             showAllField(){
                 this.isFieldWinShow = true

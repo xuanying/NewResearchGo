@@ -49,6 +49,7 @@
     "url-loader": "^0.5.8",
     "v-tag-cloud": "^1.0.3",
     "velocity-animate": "^1.5.2",
+    "vue-image-crop-upload": "^2.5.0",
     "vue-loader": "^13.3.0",
     "vue-paginate": "^3.6.0",
     "vue-style-loader": "^3.0.1",

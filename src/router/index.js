@@ -11,6 +11,8 @@ import JournaDetail from '@/components/pages/JournaDetail'
 import OrgDetail from '@/components/pages/OrgDetail'
 import Rank from '@/components/pages/Rank'
 import FirstSignin from '@/components/pages/FirstSignin'
+import PersonalDateEdit from '@/components/pages/PersonalDateEdit'
+import AuthorHomePage from '@/components/pages/AuthorHomePage'
 import Test from '@/components/pages/Test'
 
 Vue.use(Router)
@@ -28,6 +30,8 @@ export default new Router({
     {path:'/orgDetail',name:'OrgDetail',component:OrgDetail},
     {path:'/rank',name:'Rank',component:Rank},
     {path:'/firstSignin',name:'FirstSignin',component:FirstSignin},
+    {path:'/personalDateEdit',name:'PersonalDateEdit',component:PersonalDateEdit},
+    {path:'/authorHomePage',name:'AuthorHomePage',component:AuthorHomePage},
     {path:'/test',name:'Test',component:Test},
     
   ]
