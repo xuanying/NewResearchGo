@@ -218,6 +218,7 @@ export default {
   padding: 4px 9px;
   display: inline-block;
   border-radius: 3px;
+  white-space:nowrap;
 }
 
 </style>

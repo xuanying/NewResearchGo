@@ -384,6 +384,9 @@
     cursor: pointer;
     line-height: 50px;
 }
+#my_keywords .tagcloud{
+    margin-top: 40px;
+}
 /*悬浮窗*/
 .message_tip{
     border: 1px solid #1b1b1b;
@@ -506,7 +509,6 @@
     color: #278aa0;
 }
 #introduction_more{
-    display: none;
     position:absolute; 
     right: 0;
     background-color: #fff;
