@@ -28,7 +28,7 @@
               <ul class="topbar_list" v-show="isShow">
                 <li><a @click="toAuthorHomePage()">我的主页</a></li>
                 <li><a @click="toEmail()">我的邮件</a></li>
-                <li><a >分享</a></li>
+                <li><a>分享</a></li>
                 <li @click="logout()"><a>退出登录</a></li>
               </ul>
             </transition>
@@ -36,7 +36,7 @@
         </div>
       </div>
     </header>
-    <div id="window" :class="{'animationWin':loginWin||signinWin }" >
+    <div id="window" :class="{'animationWin':loginWin||signinWin }">
       <div class="page for_login" v-show="loginWin">
 
         <img class="fadeIn delay5 img_x" src="../../assets/images/x.png" @click="hideLoginWin()">
@@ -44,24 +44,21 @@
           <!--<form id="form_login" action="/register/" method="post">-->
           <div class="input-row">
             <label class="label fadeIn delay1">邮箱</label>
-            <input id="logName" name="username" type="email" required="required"
-             class="input fadeIn delay1" v-model="username"/>
+            <input id="logName" name="username" type="email" required="required" class="input fadeIn delay1" v-model="username" />
           </div>
           <div class="input-row">
             <label class="label fadeIn delay2">密码</label>
-            <input id="logPsd" name="password" type="password" required="required" 
-            class="input fadeIn delay2" v-model="passWord"/>
+            <input id="logPsd" name="password" type="password" required="required" class="input fadeIn delay2" v-model="passWord" />
           </div>
           <!--<input id="state" name = 'state' value = 'login' type = 'hidden' />-->
           <div class="input-row">
             <label class="label fadeIn delay3 pointer">验证码</label>
-            <input id="logcode_up" type="Verification" required="required" 
-            class="input fadeIn delay3" v-model="vCode"/>
-            <ul id="logcode_in" class="fadeIn delay4 pointer" title="看不清楚？点击更换">
-              <span class="word_1" style="color: rgb(236, 214, 195); text-align: center; height: 100%; line-height: 40px; width: 15%; padding: 0 1%; font-size: 1.5em; display: inline-block;">H</span>
-              <span class="word_2" style="color: rgb(50, 175, 195); text-align: center; height: 100%; line-height: 40px; width: 15%; padding: 0 1%; font-size: 1.5em; display: inline-block;">v</span>
-              <span class="word_3" style="color: rgb(50, 125, 180); text-align: center; height: 100%; line-height: 40px; width: 15%; padding: 0 1%; font-size: 1.5em; display: inline-block;">I</span>
-              <span class="word_4" style="color: rgb(254, 96, 48); text-align: center; height: 100%; line-height: 40px; width: 15%; padding: 0 1%; font-size: 1.5em; display: inline-block;">U</span>
+            <input id="logcode_up" type="Verification" required="required" class="input fadeIn delay3" v-model="userInputvCode" />
+            <ul id="logcode_in" class="fadeIn delay4 pointer" title="看不清楚？点击更换" @click="refreshVcode()">
+              <span class="word_1" style="color: rgb(236, 214, 195); text-align: center; height: 100%; line-height: 40px; width: 15%; padding: 0 1%; font-size: 1.5em; display: inline-block;">{{vCode[0]}}</span>
+              <span class="word_2" style="color: rgb(50, 175, 195); text-align: center; height: 100%; line-height: 40px; width: 15%; padding: 0 1%; font-size: 1.5em; display: inline-block;">{{vCode[1]}}</span>
+              <span class="word_3" style="color: rgb(50, 125, 180); text-align: center; height: 100%; line-height: 40px; width: 15%; padding: 0 1%; font-size: 1.5em; display: inline-block;">{{vCode[2]}}</span>
+              <span class="word_4" style="color: rgb(254, 96, 48); text-align: center; height: 100%; line-height: 40px; width: 15%; padding: 0 1%; font-size: 1.5em; display: inline-block;">{{vCode[3]}}</span>
             </ul>
           </div>
           <div class="input-row perspective">
@@ -78,25 +75,25 @@
           <!--<form id="form_reg" action="/register/" method="post">-->
           <div class="input-row">
             <label class="label fadeIn delay1">邮箱</label>
-            <input id="signName" name="username" type="email" class="input fadeIn delay1" v-model="username" />
+            <input id="signName" name="username" type="email" class="input fadeIn delay1" v-model="usernameForSignin" />
           </div>
           <div class="input-row">
             <label class="label fadeIn delay2">密码</label>
-            <input id="signPsd" name="password" type="password" class="input fadeIn delay2" v-model="passWord"/>
+            <input id="signPsd" name="password" type="password" class="input fadeIn delay2" v-model="passWordForSignin" />
           </div>
           <div class="input-row">
             <label class="label fadeIn delay2">再次输入密码</label>
-            <input id="repsd" type="password" class="input fadeIn delay2" />
+            <input id="repsd" type="password" class="input fadeIn delay2" v-model="passwordForSignin2" />
           </div>
           <!--<input id="rstate" name = 'state' value = 'login' type = 'hidden' />-->
           <div class="input-row">
             <label class="label fadeIn delay3">验证码</label>
-            <input id="signcode_up" type="Verification" class="input fadeIn delay3" v-model="vCode"/>
-            <ul id="signcode_in" class="fadeIn delay4 pointer" title="看不清楚？点击更换">
-              <span class="word_1" style="color: rgb(236, 214, 195); text-align: center; height: 100%; line-height: 40px; width: 15%; padding: 0 1%; font-size: 1.5em; display: inline-block;">H</span>
-              <span class="word_2" style="color: rgb(50, 175, 195); text-align: center; height: 100%; line-height: 40px; width: 15%; padding: 0 1%; font-size: 1.5em; display: inline-block;">v</span>
-              <span class="word_3" style="color: rgb(50, 125, 180); text-align: center; height: 100%; line-height: 40px; width: 15%; padding: 0 1%; font-size: 1.5em; display: inline-block;">I</span>
-              <span class="word_4" style="color: rgb(254, 96, 48); text-align: center; height: 100%; line-height: 40px; width: 15%; padding: 0 1%; font-size: 1.5em; display: inline-block;">U</span>
+            <input id="signcode_up" type="Verification" class="input fadeIn delay3" v-model="userInputvCode" />
+            <ul id="signcode_in" class="fadeIn delay4 pointer" title="看不清楚？点击更换" @click="refreshVcode()">
+              <span class="word_1" style="color: rgb(236, 214, 195); text-align: center; height: 100%; line-height: 40px; width: 15%; padding: 0 1%; font-size: 1.5em; display: inline-block;">{{vCode[0]}}</span>
+              <span class="word_2" style="color: rgb(50, 175, 195); text-align: center; height: 100%; line-height: 40px; width: 15%; padding: 0 1%; font-size: 1.5em; display: inline-block;">{{vCode[1]}}</span>
+              <span class="word_3" style="color: rgb(50, 125, 180); text-align: center; height: 100%; line-height: 40px; width: 15%; padding: 0 1%; font-size: 1.5em; display: inline-block;">{{vCode[2]}}</span>
+              <span class="word_4" style="color: rgb(254, 96, 48); text-align: center; height: 100%; line-height: 40px; width: 15%; padding: 0 1%; font-size: 1.5em; display: inline-block;">{{vCode[3]}}</span>
             </ul>
           </div>
           <div class="input-row perspective">
@@ -134,30 +131,34 @@
         searchboxfb: '',
         isFoucs: false,
         isBlur: true,
-        loginWin:false,
-        signinWin:false,
-        username:'',
-        passWord:'',
-        vCode:'',
+        loginWin: false,
+        signinWin: false,
+        username: '',
+        passWord: '',
+        usernameForSignin: '',
+        passWordForSignin: '',
+        passwordForSignin2: '',
+        vCode: 'HIVN',
+        userInputvCode: '',
       }
     },
     props: ['showSearchbox'],
     created() {
       this.getInfo()
-      
+
     },
     methods: {
       getInfo() {
-        console.log('created')
+        // console.log('created')
         let loginData = getCookie('loginData')
         let loginDataJson = JSON.parse(loginData)
-        if(loginDataJson.success){
+        if (loginDataJson.success) {
           this.user_info = loginDataJson
         }
         if (this.user_info.Portrait == 'None') {
-              this.user_info.Portrait = this.defaultPortrait
-            }
-            this.isLogin = true
+          this.user_info.Portrait = this.defaultPortrait
+        }
+        this.isLogin = true
       },
       returnMain() {
         this.$router.push({
@@ -195,66 +196,105 @@
       login() {
         this.loginWin = true
         this.signinWin = false
-        this.$emit('isMask',true)
+        this.$emit('isMask', true)
       },
       signin() {
         this.signinWin = true
         this.loginWin = false
-        this.$emit('isMask',true)
+        this.$emit('isMask', true)
       },
-      hideLoginWin(){
+      hideLoginWin() {
         this.signinWin = false
         this.loginWin = false
-        this.$emit('isMask',false)
+        this.$emit('isMask', false)
       },
-      logout(){
+      logout() {
         this.isLogin = false
         delCookie('loginData')
       },
-      userLogin(){
-        axios({
-          url: 'https://www.easy-mock.com/mock/5b9f5cdbbdb9831993a4272e/login',
-          method: 'post',
-          data:{username:this.username,passWord:this.passWord}
-        }).then(response => {
-          if (response.status == 200) {
-            this.user_info = response.data
-            console.log(this.user_info)
-            if (this.user_info.Portrait == 'None') {
-              this.user_info.Portrait = this.defaultPortrait
+      userLogin() {
+        if (this.username == '') {
+          alert('用户名不能为空！')
+        } else if (this.passWord == '') {
+          alert('密码不能为空！')
+        } else if (this.userInputvCode == '') {
+          alert('验证码不能为空！')
+        }else if(this.userInputvCode != this.vCode){
+          alert('验证码输入错误')
+          this.refreshVcode()
+        } 
+        else {
+          axios({
+            url: 'https://www.easy-mock.com/mock/5b9f5cdbbdb9831993a4272e/login',
+            method: 'post',
+            data: {
+              username: this.username,
+              passWord: this.passWord
             }
-            this.isLogin = true
-            this.hideLoginWin()
-            setCookie('loginData',JSON.stringify(response.data),7)
-            console.log( 'userLogin setCookie success' + getCookie('loginData'))
-          } else {
-            alert('服务器错误，无法获取数据')
-          }
-        }).catch(error => {
-          console.log(error)
-        })
+          }).then(response => {
+            if (response.status == 200) {
+              this.user_info = response.data
+              // console.log(this.user_info)
+              if (this.user_info.Portrait == 'None') {
+                this.user_info.Portrait = this.defaultPortrait
+              }
+              this.isLogin = true
+              this.hideLoginWin()
+              setCookie('loginData', JSON.stringify(response.data), 7)
+              console.log('userLogin setCookie success' + getCookie('loginData'))
+            } else {
+              alert('服务器错误，无法获取数据')
+            }
+          }).catch(error => {
+            console.log(error)
+          })
+        }
       },
-      userSignin(){
-        alert('注册成功!前往完善信息，享受更精准的推荐!')
+      userSignin() {
+        if(this.usernameForSignin == ''){
+          alert('用户名不能为空！')
+        }else if(this.passWordForSignin == ''){
+          alert('密码不能为空！')
+        }else if(this.passwordForSignin2 == ''){
+          alert('请再次输入密码！')
+        }else if(this.passWordForSignin != this.passwordForSignin2){
+          alert('两次输入的密码不一致，请重新输入！')
+          this.passWordForSignin = ''
+          this.passwordForSignin2 = ''
+        }else if(this.userInputvCode != this.vCode){
+          alert('验证码错误！')
+        }else{
+           alert('注册成功!前往完善信息，享受更精准的推荐!')
         this.hideLoginWin()
         this.$router.push({
-          name:'FirstSignin'
+          name: 'FirstSignin'
+        })
+        }
+      },
+      toAuthorHomePage() {
+        this.$router.push({
+          name: 'AuthorHomePage'
         })
       },
-      toAuthorHomePage(){
+      toEmail() {
         this.$router.push({
-          name:'AuthorHomePage'
+          name: 'Email'
         })
       },
-      toEmail(){
+      searchBtn() {
         this.$router.push({
-          name:'Email'
+          name: 'Search'
         })
       },
-      searchBtn(){
-        this.$router.push({
-          name:'Search'
-        })
+      refreshVcode() {
+        let str = "azxcvbnmsdfghjklqwertyuiopZXCVBNMASDFGHJKLQWERTYUIOP0123456789";
+        let n = 4,
+          s = "";
+        for (let i = 0; i < n; i++) {
+          let rand = Math.floor(Math.random() * str.length);
+          s += str.charAt(rand);
+        }
+        this.vCode = s
       }
     }
   }
