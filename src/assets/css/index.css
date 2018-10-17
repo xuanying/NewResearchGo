@@ -56,7 +56,7 @@
     width: 520px;
     border: 0;
 }
-.search_con input[type="submit"]{
+.search_con input[type="button"]{
     color: #605044;
     background: -moz-linear-gradient(top, #ffffff 0%, #ededed 100%);
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#ededed));

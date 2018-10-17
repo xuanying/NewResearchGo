@@ -1,0 +1,374 @@
+/*主体部分*/
+.main_content{
+    border-left: 1px solid #c6c6c6;
+    border-right: 1px solid #c6c6c6;
+}
+.main_content_left{
+    width: 200px;
+    float: left;
+    background-color: #fcfcfc;
+    border-right: 1px solid #c6c6c6;
+}
+.main_content_right{
+    width: 799px;
+    float: left;
+}
+/*------------左边部分---------------*/
+.main_content_left h2{
+    font-size: 1.5em;
+    text-align: center;
+    color: #202020;
+    margin-top: 30px;
+}
+.main_content_left ul{
+    margin-top: 30px;
+}
+.main_content_left li{
+    height: 60px;
+    background-color: #ebebeb;
+    border-top: 1px solid #d6d6d6;
+    display: block;
+    cursor: default;
+    width: 100%;
+    border-right: 1px solid #d6d6d6;
+}
+.main_content_left li:last-child{
+    border-bottom: 1px solid #d6d6d6;
+}
+.main_content_left li.active, .main_content_left li:hover{
+    background-color: #ffffff;
+}
+.main_content_left li.active{
+    border-right: 1px solid #ffffff;
+}
+.main_content_left li div{
+    line-height: 60px;
+}
+.main_content_left li img{
+    width: 25px;
+    height: 25px;
+    position: relative;
+    top: 5px;
+    margin-left: 30%;
+}
+.main_content_left li h3{
+    display: inline-block;
+    font-size: 1.1em;
+}
+/*----------右边部分----------*/
+.email_messages{
+    padding: 30px;
+    position: relative;
+}
+/*标题*/
+.email_messages header{
+    border-bottom: 2px solid #278aa0;
+}
+.email_messages header h4{
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 18px 0;
+    display: inline-block;
+}
+.email_messages header button{
+    float: right;
+    background-color: #fafafa;
+    border: 1px solid #cecece;
+    padding: 5px 20px;
+    border-radius: 3px;
+    box-shadow: #bababa 0 0 1px;
+    font-size: 0.8em;
+    color: #000000;
+}
+.email_messages header button:hover{
+    background-color: #ffffff;
+}
+/*邮件*/
+/*无邮件*/
+.email_list .no_email{
+    margin-top: 15%;
+    text-align: center;
+}
+.email_list .no_email img{
+    height: 50px;
+    width: auto;
+    position: relative;
+    top: 10px;
+}
+.email_list .no_email h5{
+    font-weight: bold;
+    font-size: 1.3em;
+    letter-spacing: 0.3em;
+    display: inline-block;
+}
+/*有邮件*/
+
+.notice_num{
+    background-color: #c62000;
+    text-align: center;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    font-size: 0.8em;
+    color: white;
+    line-height: 18px;
+    position: relative;
+    vertical-align: middle;
+}
+
+.email_list .emails{
+}
+.email_list .emails li{
+    display: block;
+    height: 80px;
+    border-bottom: 1px dotted #838383;
+    cursor: pointer;
+    position: relative;
+}
+.email_list .emails li:hover{
+    background-color: #f5f5f5;
+}
+.email_list .emails li.n_r:before{
+    content: ".";
+    color: #ff0007;
+    position: absolute;
+    left: -20px;
+    top: 5px;
+    font-size: 2em;
+}
+.emails li .email_abbr{
+    height: 50px;
+    width: 90%;
+    padding: 15px 0;
+}
+.emails li .email_abbr img{
+    height: 50px;
+    width: 50px;
+}
+.email_abbr .email_abbr_text{
+    width: 88%;
+    display: inline-block;
+    height: 50px;
+    vertical-align: top;
+    margin-left: 20px;
+    position: relative;
+}
+.email_abbr_text h6{
+    font-size: 0.9em;
+    font-weight: bold;
+}
+.email_abbr_text .time{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 0.8em;
+    color: #9c9c9c;
+}
+.email_abbr_text p{
+    font-size: 0.8em;
+    color: #9c9c9c;
+    margin-top: 10px;   
+}
+.delete{
+    position: absolute;
+    bottom: -8px;
+    right: -65px;
+    color: #002bf3;
+    text-decoration: underline;
+    font-size: 0.7em;
+    z-index: 1;
+}
+/*email详细信息*/
+.email_details{
+    width: 100%;
+    min-height: 200px;
+    position: absolute;
+    background-color: #ffffff;
+    top: 80px;
+    left: 0;
+    z-index: 2;
+}
+.email_details header{
+    border: 0;
+    padding-top: 20px;
+    margin: 13px 30px;
+    border-top: 2px solid #278aa0;
+}
+.email_details .details_title{
+    display: inline-block;
+    margin-left: 20px;
+    vertical-align: top;
+}
+.email_details header img{
+    width: 100px;
+    height: 100px;
+    padding: 3px;
+    border: 1px solid #cecece;
+}
+.email_details header h5{
+    vertical-align: top;
+    margin-top: 30px;
+    font-size: 1.2em;
+}
+.email_details header button{
+    position: absolute;
+    padding: 0;
+    right: 35px;
+    top: 20px;
+    width: 25px;
+    height: 25px;
+    border-radius: 12px;
+    color: #f2b431;
+    font-weight: bold;
+    font-size: 1em;
+    vertical-align: bottom;
+    border: 0;
+    box-shadow: none;
+}
+.email_details header button:hover{
+    background-color: #f2b431;
+    color: #ffffff;
+    font-weight: normal;
+}
+.email_details .details_title .details_time{
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 0.8em;
+    color: #9c9c9c;
+}
+.email_details .details_main{
+    margin-top: 10px;
+}
+.details_main p{
+    text-indent: 2em;
+    padding: 0 30px;
+    line-height: 2em;
+    word-wrap: break-word;
+}
+#private_details{
+}
+.email_details footer button{
+    border: 0;
+    padding: 5px;
+    line-height: 20px;
+    background-color: #7e7e7e;
+    color: #ffffff;
+    border-radius: 3px;
+    margin-left: 92%;
+}
+/*------邮件详细中的历史邮件列表------*/
+.record_list{
+    height: 360px;
+    padding: 10px 30px;
+    overflow-y: scroll;
+}
+.email_details .record_list .records li{
+    display: block;
+    padding: 10px 0;
+    border-bottom: 1px dotted #838383;
+    position: relative;
+}
+.email_details .record_list .records li:first-child{
+    border-top: 1px dotted #838383;
+}
+.record_list .records li:hover{
+    background-color: #f5f5f5;
+}
+.record_list .records li .record_email{
+    width: 100%;
+    padding: 15px 0;
+}
+.record_email .record_email_text{
+    width: 90%;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20px;
+    position: relative;
+}
+.record_email_text h6{
+    font-size: 0.9em;
+    font-weight: bold;
+}
+.record_email_text .time{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 0.8em;
+    color: #9c9c9c;
+}
+.record_email_text p{
+    text-indent: 2em;
+    font-size: 0.8em;
+    color: #000;
+    word-wrap: break-word;
+    margin-top: 10px;
+}
+/*------end------*/
+/*新邮件-邮件回复*/
+.emailbg_mask{
+    width: 100%;
+    height: 100%;
+    float: left;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    background: rgba(0,0,0,0.3);
+    z-index: 3;
+}
+.new_email{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+}
+.email_create_box{
+    width: 700px;
+    height: 500px;
+    background-color: #ffffff;
+    z-index: 4;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 1px solid #cecece;
+    border-radius: 5px;
+    box-shadow: #bababa 0 0 1px;
+}
+.addressee{
+    margin: 30px 20px 0 20px;
+}
+.addressee #receive_add{
+    width: 350px;
+    height: 30px;
+    position: absolute;
+    left: 80px;
+    border: 1px solid #cecece;
+}
+.letter_body{
+    margin: 30px 20px;
+}
+.letter_body span{
+    vertical-align: top;
+}
+.letter_body textarea{
+    resize: none;
+    position: absolute;
+    left: 80px;
+    width: 550px;
+    height: 300px;
+    border: 1px solid #cecece;
+}
+.new_email .footing{
+    position: absolute;
+    bottom: 40px;
+    right: 30px;
+}
+.new_email .footing input,.new_email .footing button{
+    border: 0;
+    padding: 5px;
+    line-height: 20px;
+    background-color: #7e7e7e;
+    color: #ffffff;
+    border-radius: 3px;
+}

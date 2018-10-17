@@ -13,6 +13,8 @@ import Rank from '@/components/pages/Rank'
 import FirstSignin from '@/components/pages/FirstSignin'
 import PersonalDateEdit from '@/components/pages/PersonalDateEdit'
 import AuthorHomePage from '@/components/pages/AuthorHomePage'
+import Email from '@/components/pages/Email'
+import Search from '@/components/pages/Search'
 import Test from '@/components/pages/Test'
 
 Vue.use(Router)
@@ -32,6 +34,8 @@ export default new Router({
     {path:'/firstSignin',name:'FirstSignin',component:FirstSignin},
     {path:'/personalDateEdit',name:'PersonalDateEdit',component:PersonalDateEdit},
     {path:'/authorHomePage',name:'AuthorHomePage',component:AuthorHomePage},
+    {path:'/email',name:'Email',component:Email},
+    {path:'/search',name:'Search',component:Search},
     {path:'/test',name:'Test',component:Test},
     
   ]

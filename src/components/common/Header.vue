@@ -10,7 +10,7 @@
           <form id="search_box" method="post" action="/search/">
             <div class="search_input" :class="{'foucs':isFoucs,'blur':isBlur}">
               <input id="input_con" name="context" class="input" type="text" @focus="searchboxFocus()" @blur="searchboxBlur()">
-              <input type="submit" value="Go">
+              <input type="button" value="Go" @click="searchBtn()">
             </div>
           </form>
         </div>
@@ -27,7 +27,7 @@
             <transition @enter="enter" @leave="leave">
               <ul class="topbar_list" v-show="isShow">
                 <li><a @click="toAuthorHomePage()">我的主页</a></li>
-                <li><a >我的邮件</a></li>
+                <li><a @click="toEmail()">我的邮件</a></li>
                 <li><a >分享</a></li>
                 <li @click="logout()"><a>退出登录</a></li>
               </ul>
@@ -244,6 +244,16 @@
       toAuthorHomePage(){
         this.$router.push({
           name:'AuthorHomePage'
+        })
+      },
+      toEmail(){
+        this.$router.push({
+          name:'Email'
+        })
+      },
+      searchBtn(){
+        this.$router.push({
+          name:'Search'
         })
       }
     }

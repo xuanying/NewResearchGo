@@ -10,11 +10,11 @@
           <h1>让科研简单点</h1>
         </section>
         <section class="search_con">
-          <form id="search_con" method="post" action="/search/">
+          <form id="search_con" method="post">
             <input name="select" id="select" type="text" value="paper" style="display: none">
             <div class="con_input" :class="{'foucs':isFocus,'blur':isBlur}">
               <input id="input_con" name="context" class="input" type="text" @focus="searchboxFocus()" @blur="searchboxBlur()">
-              <input type="submit" value="Go">
+              <input type="button" value="Go" @click="searchBtn()">
             </div>
           </form>
           <p class="search_try">试试：
@@ -111,6 +111,11 @@
       toRank(){
         this.$router.push({
           name:'Rank'
+        })
+      },
+      searchBtn(){
+        this.$router.push({
+          name:'Search'
         })
       },
       isMask(data){
