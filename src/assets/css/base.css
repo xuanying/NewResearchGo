@@ -226,9 +226,10 @@ button,input{
 }
 /*--等级显示--*/
 .rankA{
-    padding-left: 35px;
+    display: inline-block;
+    /* padding-left: 35px;
     background: url('../images/A.png') no-repeat left top;
-    background-size: 31px;
+    background-size: 31px; */
 }
 .rankB{
     padding-left: 35px;
@@ -250,6 +251,14 @@ button,input{
     background: url('../images/R0.png') no-repeat left top;
     background-position: 0px -2px;
     background-size: 35px;
+}
+/* 期刊得分 */
+.jourRankScore{
+    padding-left: 82%;
+    display: inline-block;
+}
+.journalRank{
+    display: inline-block;
 }
 .high{
     background: url('../images/high.png') no-repeat left top;

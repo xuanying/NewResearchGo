@@ -9,17 +9,17 @@
                     <h1>排行榜</h1>
                     <div class="dmanu">
                         <span class="dmanu_head">领域</span>
-                        <ul class="outside">
-                            <li>
-                                <span>a</span>
-                                <ul class="inside">
+                        <ul class="outside" >
+                            <li v-for="(midfield,midfieldindex) in midFields" :key="midfieldindex">
+                                <span @click="getRankByMidfield(midfield)">{{midfield}}</span>
+                                <!-- <ul class="inside">
                                     <li>a1</li>
                                     <li>a2</li>
                                     <li>a3</li>
                                     <li>a4</li>
-                                </ul>
+                                </ul> -->
                             </li>
-                            <li>
+                            <!-- <li>
                                 <span>b</span>
                                 <ul class="inside">
                                     <li>b1</li>
@@ -47,7 +47,7 @@
                                     <li>d4</li>
                                     <li>d5</li>
                                 </ul>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
@@ -107,13 +107,17 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="(journalList,journalIndex) in handlerRankInfo.Journal" :key="journalIndex">
+                        <tr v-for="(journalList,journalIndex) in journalRankData" :key="journalIndex">
                             <td>
-                            <h3 class="rankA"><a href="#">{{journalList.Journal_All.Journal}}</a></h3>
+                            <div>
+                                <em class="journalRank">{{journalIndex + 1}}.</em>
+                                <h3 class="rankA"><a href="#">{{journalList.journal}}</a></h3>
+                                <em class="jourRankScore">score:{{journalList.score}}</em>
+                            </div>
                             </td>
-                            <td>
+                            <!-- <td>
                                 <h3 class="rankB"><a href="#">{{journalList.Journal_Year.Journal}}</a></h3>
-                            </td>
+                            </td> -->
                         </tr>
                     </tbody>
                 </table>
@@ -278,10 +282,13 @@ import axios from 'axios'
                 isKeywordShow:false,
                 isPaperShow:false,
                 isNewbeeShow:false,
+                midFields:'',
+                journalRankData:'',
             }
         },
         created(){
             this.getRankInfo()
+            this.getMinField()
         },
         methods:{
             getRankInfo(){
@@ -295,6 +302,43 @@ import axios from 'axios'
                     }
                 }).catch(error=>{
                     alert('服务器错误，获取数据失败' + error)
+                })
+            },
+            getMinField(){
+                axios({
+                    url:'http://192.168.1.129:8080/api/getAllDomains',
+                    method:'get'
+                }).then(response=>{
+                    if(response.status == 200){
+                        this.midFields = response.data
+                        console.log(response.data)
+                        this.getJournalRankInit();
+                    }
+                })
+            },
+            getJournalRankInit(){
+                let midfieldinit = this.midFields[0]
+                let midfieldurl = "http://192.168.1.129:8080/api/getJournal_Rank/" + midfieldinit
+                axios({
+                    url:midfieldurl,
+                    method:'get'
+                }).then(response=>{
+                    if(response.status == 200){
+                        this.journalRankData = response.data
+                    }
+                })
+            },
+            getRankByMidfield(midfield){
+                console.log("success" + midfield)
+                let midfieldurl = "http://192.168.1.129:8080/api/getJournal_Rank/" + midfield
+                axios({
+                    url:midfieldurl,
+                    method:'get'
+                }).then(response=>{
+                    if(response.status == 200){
+                        this.journalRankData = response.data
+                        console.log(response.data[0].journal)
+                    }
                 })
             },
             isMask(data){
