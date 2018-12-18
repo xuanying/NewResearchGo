@@ -5,12 +5,12 @@
     <div class="main">
       <div class="main_content">
         <section class="list_head">
-          <span>筛选</span>
+          <!-- <span>筛选</span> -->
           <div class="filter_div">
-            <input id="list_filter" name="filter" class="input" type="text">
-            <input type="button" value="">
+            <!-- <input id="list_filter" name="filter" class="input" type="text">
+            <input type="button" value=""> -->
           </div>
-          <span id="change_word" @click="chnagePaper()">换一批</span>
+          <span id="change_word" @click="chnagePaper()">关键词</span>
         </section>
         <section class="result_box">
           <div class="re_block" v-for="(item,index) in paperInfo" :key="index" v-show="changepage(index)">

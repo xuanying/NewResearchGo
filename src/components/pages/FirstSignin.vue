@@ -12,12 +12,12 @@
                 <p class="hint">带 *的为必填项</p>
                 <span class="necessary">昵称：</span>
                 <p class="input_p">
-                    <input name="call_name" id="call_name_full" type="text" required>
+                    <input name="call_name" id="call_name_full" type="text" required v-model="username">
                 </p>
                 <br />
                 <span class="necessary">英文名：</span>
                 <p class="input_p">
-                    <input name="full_name" id="e_name_full" type="text" required>
+                    <input name="full_name" id="e_name_full" type="text" required v-model="enname">
                 </p>
                 <br />
                 <span class="necessary">研究领域：</span>
@@ -64,6 +64,12 @@
 
 <script>
 import axios from 'axios'
+import {
+    setCookie,
+    getCookie,
+    delCookie,
+    delAllCookie
+  } from '@/tools/cookie.js'
     export default {
         name:'FirstSignin',
         data(){
@@ -77,12 +83,23 @@ import axios from 'axios'
                 firstLetterList:[],
                 showFieldByFirstLetter:[],
                 selectIndex:0,
+                token:'',
+                username:'',
+                enname:'',
+                email:'',
+
             }
         },
         created(){
             this.getFieldInfo()
+            this.getToken()
         },
         methods:{
+            getToken(){
+                this.token = this.$route.params.token
+                this.email = this.$route.params.email
+                console.log(this.token + ">>>>>>>>>>>>")
+            },
             getFieldInfo(){
                 axios({
                     url:'https://www.easy-mock.com/mock/5b9f5cdbbdb9831993a4272e/fieldInfo',
@@ -136,17 +153,28 @@ import axios from 'axios'
                 this.isFieldWinShow = false
             },
             submit(){
+                console.log(this.fieldList.toString() + "fieldList")
+                axios({
+                    url:'http://113.54.197.77:8080/api/fillDetailInfo',
+                    method:'post',
+                    data:{
+                        username:this.username,
+                        enname:this.enname,
+                        fieldList:this.fieldList,
+                        keywordList:this.keywordList,
+                        email:this.email
+                    },
+                    headers:{
+                        'Content-type':' application/json',
+                        'Authorization':this.token
+                    }
+                }).then(response=>{
+                    if(response.status == 200){
 
-                // axios({
-                //     url:'',
-                //     method:'post'
-                // }).then(response=>{
-                //     if(response.status == 200){
-
-                //     }
-                // }).catch(error=>{
-                //     alert(error)
-                // })
+                    }
+                }).catch(error=>{
+                    alert(error)
+                })
 
                 this.$router.push({
                     name:'Main'

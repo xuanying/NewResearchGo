@@ -138,27 +138,28 @@
         usernameForSignin: '',
         passWordForSignin: '',
         passwordForSignin2: '',
-        vCode: 'HIVN',
+        vCode: '',
         userInputvCode: '',
       }
     },
     props: ['showSearchbox'],
     created() {
       this.getInfo()
-
+      
     },
     methods: {
       getInfo() {
         // console.log('created')
         let loginData = getCookie('loginData')
+        console.log(loginData)
         let loginDataJson = JSON.parse(loginData)
-        if (loginDataJson.success) {
+        if (loginDataJson.msg == '2') {
           this.user_info = loginDataJson
+          this.isLogin = true
         }
-        if (this.user_info.Portrait == 'None') {
-          this.user_info.Portrait = this.defaultPortrait
-        }
-        this.isLogin = true
+        // if (this.user_info.Portrait == 'None') {
+        //   this.user_info.Portrait = this.defaultPortrait
+        // }
       },
       returnMain() {
         this.$router.push({
@@ -197,11 +198,13 @@
         this.loginWin = true
         this.signinWin = false
         this.$emit('isMask', true)
+        this.refreshVcode()
       },
       signin() {
         this.signinWin = true
         this.loginWin = false
         this.$emit('isMask', true)
+        this.refreshVcode()
       },
       hideLoginWin() {
         this.signinWin = false
@@ -225,28 +228,37 @@
         } 
         else {
           axios({
-            url: 'https://www.easy-mock.com/mock/5b9f5cdbbdb9831993a4272e/login',
+            url: 'http://113.54.197.77:8080/login',
             method: 'post',
             data: {
-              username: this.username,
-              passWord: this.passWord
+              email: this.username,
+              password: this.passWord
             }
           }).then(response => {
             if (response.status == 200) {
               this.user_info = response.data
               // console.log(this.user_info)
-              if (this.user_info.Portrait == 'None') {
-                this.user_info.Portrait = this.defaultPortrait
+              // if (this.user_info.Portrait == 'None') {
+              //   this.user_info.Portrait = this.defaultPortrait
+              // }
+              if(response.data.msg == '2'){
+                  this.user_info = response.data
+                  this.user_info.Portrait = this.defaultPortrait
+                  this.isLogin = true
+                  this.hideLoginWin()
+                  setCookie('loginData', JSON.stringify(this.user_info), 7)
+                  console.log('userLogin setCookie success' + getCookie('loginData'))
+              }else if(response.data.msg == '0'){
+                alert("用户不存在！")
+              }else if(response.data.msg == '1'){
+                alert("密码错误！")
               }
-              this.isLogin = true
-              this.hideLoginWin()
-              setCookie('loginData', JSON.stringify(response.data), 7)
-              console.log('userLogin setCookie success' + getCookie('loginData'))
+              
             } else {
               alert('服务器错误，无法获取数据')
             }
           }).catch(error => {
-            console.log(error)
+            alert(error)
           })
         }
       },
@@ -264,11 +276,31 @@
         }else if(this.userInputvCode != this.vCode){
           alert('验证码错误！')
         }else{
-           alert('注册成功!前往完善信息，享受更精准的推荐!')
-        this.hideLoginWin()
-        this.$router.push({
-          name: 'FirstSignin'
-        })
+          axios({
+            url:"http://113.54.197.77:8080/register",
+            method:'post',
+            data:{
+              email:this.usernameForSignin,
+              password:this.passWordForSignin
+            }
+          }).then(response=>{
+            if (response.status == 200) {
+              if(response.data.msg == '0'){
+                alert("该邮箱已注册！")
+              }else if(response.data.msg='1'){
+                console.log(response.data.token)
+                alert('注册成功!前往完善信息，享受更精准的推荐!')
+                this.hideLoginWin()
+                this.$router.push({
+                name: 'FirstSignin',
+                params:{token:response.data.token},
+                email:this.username
+                })
+              }
+            }
+          }).catch(error=>{
+            alert(error)
+          })
         }
       },
       toAuthorHomePage() {

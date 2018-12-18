@@ -306,7 +306,7 @@ import axios from 'axios'
             },
             getMinField(){
                 axios({
-                    url:'http://192.168.1.129:8080/api/getAllDomains',
+                    url:'http://192.168.1.114:8222/api/getAllDomains',
                     method:'get'
                 }).then(response=>{
                     if(response.status == 200){
@@ -318,7 +318,7 @@ import axios from 'axios'
             },
             getJournalRankInit(){
                 let midfieldinit = this.midFields[0]
-                let midfieldurl = "http://192.168.1.129:8080/api/getJournal_Rank/" + midfieldinit
+                let midfieldurl = "http://192.168.1.114:8222/api/getJournal_Rank/" + midfieldinit
                 axios({
                     url:midfieldurl,
                     method:'get'
@@ -330,7 +330,7 @@ import axios from 'axios'
             },
             getRankByMidfield(midfield){
                 console.log("success" + midfield)
-                let midfieldurl = "http://192.168.1.129:8080/api/getJournal_Rank/" + midfield
+                let midfieldurl = "http://192.168.1.114:8222/api/getJournal_Rank/" + midfield
                 axios({
                     url:midfieldurl,
                     method:'get'

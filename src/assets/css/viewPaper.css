@@ -65,24 +65,29 @@ a{
 }
 /* 换一批 */
 #change_word,#change_word2{
-	position: relative;
+    position: relative;
 	top: 10px;
-	z-index: 0;
+    z-index: 0;
+    
+    font-size: 1em;
+    color: #2caeb5;
+    padding: 0 2px;
+    border: 1px solid #2caeb5;
+    border-radius: 3px;
+    cursor: pointer;
 }
 #change_word,#change_word2{
     float: right;
     width: 55px;
     padding-left: 25px;
-    background: url("../images/change_word.png") no-repeat left center;
-    font-size: 1.1em;
+    /* background: url("../images/change_word.png") no-repeat left center; */
     display: inline-block;
     line-height: 30px;
-    vertical-align: middle;
-    color: #8a8a8a;
+    text-align: center;
     font-weight: normal;
     cursor: pointer;
 }
 #change_word:hover,#change_word2:hover{
-    background: url("../images/change_red.png") no-repeat left center;
-    color: #ebb15e;
+    /* background: url("../images/change_red.png") no-repeat left center; */
+    /* color: #ebb15e; */
 }
