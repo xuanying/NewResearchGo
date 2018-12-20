@@ -277,6 +277,7 @@
         }else if(this.userInputvCode != this.vCode){
           alert('验证码错误！')
         }else{
+          console.log(this.usernameForSignin + "email>>>>>>>>>>>>>>>>.header")
           axios({
             url:baseUrl + "/register",
             method:'post',
@@ -295,9 +296,10 @@
                 this.hideLoginWin()
                 this.$router.push({
                 name: 'FirstSignin',
-                params:{token:response.data.token,
-                email:this.usernameForSignin}
-                
+                params:{
+                  token:response.data.token,
+                  email:this.usernameForSignin
+                  }   
                 })
               }
             }

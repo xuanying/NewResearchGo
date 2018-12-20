@@ -99,7 +99,7 @@ import {
             getToken(){
                 this.token = this.$route.params.token
                 this.email = this.$route.params.email
-                console.log(this.token + ">>>>>>>>>>>>" + email)
+                console.log("firstSign"+this.token + ">>>>>>>>>>>>" + "email>>>>" +email)
             },
             getFieldInfo(){
                 axios({
