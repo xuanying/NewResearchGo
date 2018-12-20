@@ -117,6 +117,7 @@
     delCookie,
     delAllCookie
   } from '@/tools/cookie.js'
+  import baseUrl from '@/serviceAPI.config.js'
   export default {
     name: 'Header',
     data() {
@@ -228,7 +229,7 @@
         } 
         else {
           axios({
-            url: 'http://113.54.197.77:8080/login',
+            url: baseUrl +'/login/',
             method: 'post',
             data: {
               email: this.username,
@@ -277,7 +278,7 @@
           alert('验证码错误！')
         }else{
           axios({
-            url:"http://113.54.197.77:8080/register",
+            url:baseUrl + "/register/",
             method:'post',
             data:{
               email:this.usernameForSignin,

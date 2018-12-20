@@ -70,6 +70,7 @@ import {
     delCookie,
     delAllCookie
   } from '@/tools/cookie.js'
+  import baseUrl from '@/serviceAPI.config.js'
     export default {
         name:'FirstSignin',
         data(){
@@ -155,7 +156,7 @@ import {
             submit(){
                 console.log(this.fieldList.toString() + "fieldList")
                 axios({
-                    url:'http://113.54.197.77:8080/api/fillDetailInfo',
+                    url:baseUrl + '/api/fillDetailInfo',
                     method:'post',
                     data:{
                         username:this.username,
