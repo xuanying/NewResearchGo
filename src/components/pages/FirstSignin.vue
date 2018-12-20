@@ -93,13 +93,13 @@ import {
         },
         created(){
             this.getFieldInfo()
-            this.getToken()
+            
         },
         methods:{
             getToken(){
                 this.token = this.$route.params.token
                 this.email = this.$route.params.email
-                console.log(this.token + ">>>>>>>>>>>>")
+                console.log(this.token + ">>>>>>>>>>>>" + email)
             },
             getFieldInfo(){
                 axios({
@@ -110,6 +110,7 @@ import {
                         this.allField = response.data
                         this.showFieldByFirstLetter = response.data['A']
                         this.firstLetterList = this.sortFirstLetter()
+                        this.getToken()
                     }
                 }).catch(error=>{
                     alert(error)

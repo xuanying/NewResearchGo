@@ -229,7 +229,7 @@
         } 
         else {
           axios({
-            url: baseUrl +'/login/',
+            url: baseUrl +'/login',
             method: 'post',
             data: {
               email: this.username,
@@ -238,7 +238,7 @@
           }).then(response => {
             if (response.status == 200) {
               this.user_info = response.data
-              console.log(this.user_info.msg + "登录返回信息>>>>>>>>>>>>>")
+              console.log(this.user_info.msg +"=======" + "登录返回信息>>>>>>>>>>>>>")
               // if (this.user_info.Portrait == 'None') {
               //   this.user_info.Portrait = this.defaultPortrait
               // }
@@ -278,7 +278,7 @@
           alert('验证码错误！')
         }else{
           axios({
-            url:baseUrl + "/register/",
+            url:baseUrl + "/register",
             method:'post',
             data:{
               email:this.usernameForSignin,
@@ -286,6 +286,7 @@
             }
           }).then(response=>{
             if (response.status == 200) {
+              console.log(response.data.msg + "注册返回信息=========")
               if(response.data.msg == '0'){
                 alert("该邮箱已注册！")
               }else if(response.data.msg='1'){
@@ -294,8 +295,9 @@
                 this.hideLoginWin()
                 this.$router.push({
                 name: 'FirstSignin',
-                params:{token:response.data.token},
-                email:this.username
+                params:{token:response.data.token,
+                email:this.username}
+                
                 })
               }
             }

@@ -36,7 +36,7 @@
             <span class="se_year">{{item.Paper_Year}}</span>
             <h1><a @click="toArticleDetail(item.Paper_Title)">{{item.Paper_Title}}</a></h1>
             <p class="se_author" v-for="(Author,index) in item.Paper_Author" :key="index+1000">
-              <a>{{Author.Author_Name }}</a>
+              <a>{{Author}}</a>
               <!-- + '(' + Author.Author_Level + ')' -->
             </p>
             <p class="se_jour"><a href="">{{item.Paper_Journal + '(' + item.Journal_Level + ')'}}</a></p>
@@ -48,8 +48,9 @@
               <img src="../../assets/images/about.png">
               <p>我的方向：
                 <label class="re_keyword" v-for="(Relkeyword,index) in item.Rel_Keyword" :key="index+10000">
-                <a> {{Relkeyword.Keyword}}</a>
-                <span> {{Relkeyword.Rel_Level}} </span></label>
+                <a> {{Relkeyword}}</a>
+                <!-- <span> {{Relkeyword.Rel_Level}} </span> -->
+                </label>
               </p>
               <!-- <p>我的好友：
                 <label class="re_author" v-for="(Relfriend,index) in item.Rel_Friend" :key="index+100000">
@@ -107,8 +108,9 @@
     },
     methods: {
       getKeyword(){
+        this.getLoginInfo()
         axios({
-          url:baseUrl + '/api/getKeywordListById/' +this.userId ,
+          url:baseUrl + '/api/getKeywordListById/' +this.userId,
           method:'get',
           headers:{
             'Content-type':' application/json',
@@ -125,8 +127,9 @@
       },
       getLoginInfo(){
         let loginInfo = getCookie('loginData')
-        this.token = loginInfo.token
-        this.userId = loginInfo.userId
+        let loginInfoJson = JSON.parse(loginInfo)
+        this.token = loginInfoJson.token
+        this.userId = loginInfoJson.userId
         console.log(this.token + "userId" + this.userId)
       },
       getPaperInfo() {
