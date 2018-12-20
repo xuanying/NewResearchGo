@@ -296,7 +296,7 @@
                 this.$router.push({
                 name: 'FirstSignin',
                 params:{token:response.data.token,
-                email:this.username}
+                email:this.usernameForSignin}
                 
                 })
               }
