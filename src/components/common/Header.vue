@@ -238,7 +238,7 @@
           }).then(response => {
             if (response.status == 200) {
               this.user_info = response.data
-              console.log(this.user_info + "登录返回信息>>>>>>>>>>>>>")
+              console.log(this.user_info.toString() + "登录返回信息>>>>>>>>>>>>>")
               // if (this.user_info.Portrait == 'None') {
               //   this.user_info.Portrait = this.defaultPortrait
               // }
