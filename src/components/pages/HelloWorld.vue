@@ -18,8 +18,8 @@
             </div>
           </form>
           <p class="search_try">试试：
-            <a href="">{{try_info.Try_Author.Full_Name}} </a>
-            <a href="">{{try_info.Try_Keyword.Keyword}} </a>
+            <!-- <a href="">{{try_info.Try_Author.Full_Name}} </a>
+            <a href="">{{try_info.Try_Keyword.Keyword}} </a> -->
           </p>
 
         </section>
@@ -27,7 +27,7 @@
           <ul>
             <li @click="findDirection()" id="dire">
               <img src="../../assets/images/dire.png">
-              <span>我要找方向</span>
+              <span>推荐作者</span>
             </li>
             <li id="paper" @click="readPaper()">
               <img src="../../assets/images/paper.png">
@@ -39,7 +39,7 @@
             </li>
             <li class="cur" id="cur" @click="toRank()">
               <img src="../../assets/images/cur.png">
-              <span>我很好奇</span>
+              <span>排行榜</span>
             </li>
           </ul>
         </section>
@@ -68,7 +68,7 @@
       Header
     },
     created() {
-      this.getTryinfo()
+      // this.getTryinfo()
     },
     methods: {
       getTryinfo() {
@@ -95,7 +95,7 @@
       },
       findDirection() {
         this.$router.push({
-          name: 'FindDirection'
+          name: 'author'
         })
       },
       readPaper(){

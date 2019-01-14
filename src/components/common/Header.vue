@@ -152,7 +152,7 @@
       getInfo() {
         // console.log('created')
         let loginData = getCookie('loginData')
-        console.log(loginData)
+        // console.log(loginData)
         let loginDataJson = JSON.parse(loginData)
         if (loginDataJson.msg == '2') {
           this.user_info = loginDataJson

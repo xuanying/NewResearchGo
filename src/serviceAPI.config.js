@@ -1,4 +1,4 @@
-const BASEURL = "localhost:8222"
+const BASEURL = "http://192.168.1.129:8222"
 
 // const URL ={
 //     getShopingMallInfo : BASEURL+'index',    //商城首页所有信息

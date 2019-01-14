@@ -26,14 +26,14 @@
     border-radius: 3px;
     cursor: pointer;
 }
-.r_head .dmanu:hover .outside{
+/* .r_head .dmanu:hover .outside{
     display: inline-block;
-}
+} */
 /*----domain manu----*/
 .r_head .outside{
-    display: none;
+    /* display: none; */
     position: absolute;
-    left: 38px;
+    left: 101px;
     top: -1px;
     border: 1px solid #2caeb5;
     border-radius: 3px;
@@ -142,12 +142,17 @@
     font-size: 1em;
     color: #000000;
 }
+/* 匹配关键词 */
+.rank_box table label a{
+    color: #22868c;
+    margin-left: 10px;
+}
 .rank_box table a:hover{
     text-decoration: underline;
 }
 .rank_box td,.rank_box th{
     /*border: 1px solid #c6c6c6;*/
-    width: 50%;
+    width: 60%;
 }
 .rank_box tr{
     border-bottom: 1px solid #e0e0e0;
@@ -196,10 +201,66 @@
 .item_info ul li{
     font-size: 0.8em;
 }
-a.author{
+.item_info .author{
     background: url('../images/author.png') no-repeat left center;
     background-size: 18px;
     padding-left: 25px;
     margin-left: 10px;
     font-size: 0.9em;
+}
+.item_info .se_jour{
+    background: url('../images/jour.png') no-repeat left center;
+    background-size: 23px;
+    padding-left: 30px;
+}
+.item_info .se_jour a{
+    color: #2c2c2c;
+    font-size: 0.9em;
+    line-height: 30px;
+    text-decoration: none;
+}
+.rank_box td .re_keyword a:hover{
+    color: #e9711c;
+}
+
+/* 匹配关键词 */
+.rank_box .item_info .re_keyword a{
+    cursor: pointer;
+}
+/* 作者 */
+.item_info .paperTitleList ul li{
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+    color: #007398;
+    font-size: 1em;
+}
+.item_info .paperTitleList li:hover{
+    color: #e9711c;
+}
+.item_info .keywordList ul li{
+    display: inline-block;
+    margin-left: 25px;
+    color: #007398;
+    font-size: 1em;
+    cursor: pointer;
+}
+.item_info .keywordList li:hover{
+    color: #e9711c;
+    text-decoration: underline;
+}
+/* 刊物 */
+.item_info .citedNum{
+    text-align: right;
+}
+.item_info .jcr{
+    color: red;
+}
+.item_info .citedNum li{
+    display: inline-block;
+    margin-left: 10px;
+}
+.item_info .citedNum li span{
+    font-size: 1.1em;
+    color: #007398;
 }

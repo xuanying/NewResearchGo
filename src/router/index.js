@@ -15,7 +15,9 @@ import PersonalDateEdit from '@/components/pages/PersonalDateEdit'
 import AuthorHomePage from '@/components/pages/AuthorHomePage'
 import Email from '@/components/pages/Email'
 import Search from '@/components/pages/Search'
+import Author from '@/components/pages/Author'
 import Test from '@/components/pages/Test'
+import TestWordClound from '@/components/test/TestWordClound'
 
 Vue.use(Router)
 
@@ -37,6 +39,7 @@ export default new Router({
     {path:'/email',name:'Email',component:Email},
     {path:'/search',name:'Search',component:Search},
     {path:'/test',name:'Test',component:Test},
-    
+    {path:'/author',name:"author",component:Author},
+    {path:'/testWordClound',name:'TestWordClound',component:TestWordClound},
   ]
 })

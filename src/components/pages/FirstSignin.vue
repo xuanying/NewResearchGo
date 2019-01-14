@@ -88,7 +88,6 @@ import {
                 username:'',
                 enname:'',
                 email:'',
-
             }
         },
         created(){
@@ -99,22 +98,23 @@ import {
             getToken(){
                 this.token = this.$route.params.token
                 this.email = this.$route.params.email
-                console.log("firstSign"+this.token + ">>>>>>>>>>>>" + "email>>>>" +email)
+                console.log("firstSign"+this.token + ">>>>>>>>>>>>" + "email>>>>" +this.email)
             },
             getFieldInfo(){
-                axios({
-                    url:'https://www.easy-mock.com/mock/5b9f5cdbbdb9831993a4272e/fieldInfo',
-                    method:'get'
-                }).then(response=>{
-                    if(response.status == 200){
-                        this.allField = response.data
-                        this.showFieldByFirstLetter = response.data['A']
-                        this.firstLetterList = this.sortFirstLetter()
-                        this.getToken()
-                    }
-                }).catch(error=>{
-                    alert(error)
-                })
+                this.getToken()
+                // axios({
+                //     url:'https://www.easy-mock.com/mock/5b9f5cdbbdb9831993a4272e/fieldInfo',
+                //     method:'get'
+                // }).then(response=>{
+                //     if(response.status == 200){
+                //         this.allField = response.data
+                //         this.showFieldByFirstLetter = response.data['A']
+                //         this.firstLetterList = this.sortFirstLetter()
+                //         this.getToken()
+                //     }
+                // }).catch(error=>{
+                //     alert(error)
+                // })
             },
             addField(){
                 this.fieldArr.push(1)

@@ -92,11 +92,11 @@ a{
 	top: -20px;
     z-index: 0;
 }
-.keyworddiv:hover .outside{
+/* .keyworddiv:hover .outside{
     display: inline-block;
-}
+} */
 .keyworddiv .outside{
-    display: none;
+    /* display: none; */
     position: absolute;
     left: 69%;
     top: -10%;

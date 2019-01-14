@@ -134,7 +134,6 @@
     border-bottom: 1px dashed #a2a2a2;
 } */
 .part_left{
-    margin-top: 10%;
     width: 50%;
     display: inline-block;
     overflow: hidden;
@@ -190,10 +189,10 @@
 /*keyword*/
 .my_keywords{
     float: right;
-    width: 350px;
-    height: 350px;
+    width: 380px;
+    height: 430px;
     display: inline-block;
-    margin-right: 20px;
+    margin-right: 10px;
     margin-top: -15px;
     background: url("../images/keywords.png") no-repeat top left;
     background-size: 100px;
@@ -215,30 +214,4 @@
 }
 .rankA,.rankB,.rankC,.rankD{
     background-size: 35px;
-}
-
-/* 刊物  */
-.item_info h3 a{
-    text-align: center;
-    font-size: 1.1em;
-    color: #007398;
-    text-decoration: none;
-}
-.item_info h3 a:hover{
-    color: #2caeb5;
-    text-decoration: underline;
-}
-.item_info .citedNum{
-    text-align: right;
-}
-.item_info .jcr{
-    color: red;
-}
-.item_info .citedNum li{
-    text-align: left;
-    margin-left: 10px;
-}
-.item_info .citedNum li span{
-    font-size: 1.1em;
-    color: #007398;
 }
